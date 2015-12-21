@@ -27,7 +27,7 @@ After running this, you should see this image, which represents the message we w
 
 <div style="text-align:center" markdown="1">
 <!-- ![Message Signal](http://tolribeiro.github.io/mywebsite/downloads/message.png "Message Signal m(t)") -->
-<img src="./static/img/message.png"/>
+<img src="./static/img/message.png" class="img-responsive"/>
 </div>
 
 Now we can write the definition for the carrier *x(t)*, a *sin()* function with frequency of *10 Hz* and amplitude *A* of *5*.
@@ -48,7 +48,7 @@ Now we can see the carrier *x(t)* we're gonna use to modulate our message *m(t)*
 
 <div style="text-align:center" markdown="1">
 <!-- ![Carrier Signal](http://tolribeiro.github.io/mywebsite/downloads/carrier.png "Carrier x(t)") -->
-<img src="./static/img/carrier.png"/>
+<img src="./static/img/carrier.png" class="img-responsive"/>
 </div>
 
 Finally, we can plot the modulated (in phase) signal *u(t)* by just multiplying *m(t)* by *x(t)*. We're gonna call *u(t)* the modulated signal.
@@ -67,7 +67,7 @@ Which we can see as:
 
 <div style="text-align:center" markdown="1">
 <!-- ![Modulated Signal](http://tolribeiro.github.io/mywebsite/downloads/modulated.png "PSK Modulated Signal u(t)") -->
-<img src="./static/img/modulated.png"/>
+<img src="./static/img/modulated.png" class="img-responsive"/>
 </div>
 
 Finally, our message is modulated in **PSK**, once the phase of the signal does not change while *m(t)* is equal to *1*, being reversed (changing by 180 degrees) when it goes to *0*.

@@ -20,7 +20,7 @@ In the empty forms, I manually enter the times (24-hour style in Brazil) during 
 <br />
 
 <div style="text-align:center" markdown="1">
-<img src="./static/img/minhasHorasData.jpg" width="360" height="640" />
+<img src="./static/img/minhasHorasData.jpg" width="360" height="640" class="img-responsive"/>
 <!--![Message Signal](http://tolribeiro.github.io/mywebsite/downloads/minhasHorasData.jpg "App showing the elapsed time calculated.")-->
 </div>
 <br />

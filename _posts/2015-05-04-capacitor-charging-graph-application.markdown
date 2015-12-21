@@ -12,7 +12,7 @@ The result of this configuration is pretty straightforward: my capacitor will ge
 
 <div style="text-align:center" markdown="1">
 <!-- ![Message Signal](http://tolribeiro.github.io/mywebsite/downloads/charge.png "Function that describes capacitor charge.") -->
-<img src="./static/img/charge.png"/>
+<img src="./static/img/charge.png" class="img-responsive"/>
 </div>
 <br />
 We can easily see that it corresponds to a *time* versus *voltage* (exponential) function, where the *RC* element is what we call **time constant**. If you multiply the value of your capacitance with the value of the resistance that you have configured in your circuit, the result will represent how long it took for your capacitor to get charged with approximately 63% of the voltage from the source.   
