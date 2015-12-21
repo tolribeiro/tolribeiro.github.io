@@ -5,7 +5,9 @@ body {
   height: 100%;
   background-color: #fff;
   /*font-family: 'Source Sans Pro', sans-serif;*/
-  font-family: "Helvetica Neue Ultra Thin", sans-serif;
+  /*font-family: "Helvetica Neue Ultra Thin", sans-serif;*/
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-weight: 300;
   /* The html and body elements cannot have any padding or margin. */
   border-top: 3px solid #384283;
 }
