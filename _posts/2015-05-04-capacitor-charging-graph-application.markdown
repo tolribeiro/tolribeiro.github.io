@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Capacitor charging graph application."
+title:  "Capacitor charging graph application"
 description: "Using Google API to generate capacitor graph."
 date:   2015-05-04 22:04:00
 categories: capacitor electronics

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Simplified DES (SDES): an implementation in C."
+title:  "Simplified DES (SDES): an implementation in C"
 description: "A simplified version of the famous encryption algorithm, DES."
 date:   2015-01-12 3:27:00
 categories: programming C criptography
@@ -23,7 +23,7 @@ The scheme below shows how the plaintext (input) is manipulated to generate the 
 
 <div style="text-align:center" markdown="1">
 <!-- ![Message Signal](http://tolribeiro.github.io/mywebsite/downloads/encryption.png "Simplified DES encryption scheme.") -->
-<img src="./static/img/encryption.png" width="229" height="762"/>
+<img src="./static/img/encryption.png" width="229" height="762" class="img-responsive"/>
 </div>
 <br/>
 After all these steps, the *output* is the encrypted *input*. 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Digital Modulation: using PSK as example on MATLAB."
+title:  "Digital Modulation: using PSK as example on MATLAB"
 description: "How to use MATLAB to explore and practice digital modulation."
 date:   2014-10-30 21:53:05
 categories: jekyll update

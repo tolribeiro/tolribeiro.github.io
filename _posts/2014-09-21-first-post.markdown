@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Welcome to my website, powered by Jekyll."
+title:  "Welcome to my website, powered by Jekyll"
 description: "Why and how I changed from Wordpress."
 date:   2014-09-21 21:53:05
 categories: jekyll update
