@@ -1,4 +1,4 @@
- # Personal Website using Jekyll and Sustain theme
+## Personal Website using Jekyll and Sustain theme
 
 Based on Sustain, I adapted the theme and to fit my needs. I maintain a blog, where I write about my personal projects, and a resume page.
 
