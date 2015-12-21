@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Thiago Ribeiro" />
+    <meta name="description" content="Personal blog and resume">
+    <link rel="icon" href="./static/img/favicon.ico" type="image/gif">
+
+
+    
+      <title>Capacitor charging graph application.</title>
+    
+	
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
+    crossorigin="anonymous">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+	<!-- Custom styles for this template -->
+    <link rel="stylesheet" type="text/css" href="static/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" href="static/css/bootstrap.icon-large.min.css" />
+    <link rel="stylesheet" type="text/css" href="static/css/syntax.css" />
+
+    <!-- Google Analytics -->
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-69391421-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </head>
+  <!-- Main Body-->
+  <body>
+  <!-- Wrap all page content here -->
+  <div id="wrap">
+    <!-- Navbar header -->
+    <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="index.html"><i class="fa fa-home"></i></a>
+    </div>
+    <div id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="blog.html">BLOG</a></li>
+        <!--<li><a href="projects.html">PROJECTS</a></li>-->
+        <li><a href="vitae.html">RESUME</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="container">
+	<div class="blog-post">
+		<h3>
+		  <strong><a href="/capacitor-charging-graph-application.html">Capacitor charging graph application.</a></strong>
+		</h3>
+	</div>
+	<div class="blog-title">
+		<h4>
+		May  4, 2015
+			&nbsp;&nbsp;
+			
+		</h4>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<div class="blogpost">
+			  <p>Recently, I faced the task of analyzing the graph of a capacitor in a simple circuit configuration: a voltage source powering the given capacitor connected to a resistor in series.</p>
+
+<p>The result of this configuration is pretty straightforward: my capacitor will get charged with a certain value of voltage from the source (<em>almost</em> 100%), respecting the exponential function described below:</p>
+
+<div style="text-align:center" markdown="1">
+<!-- ![Message Signal](http://tolribeiro.github.io/mywebsite/downloads/charge.png "Function that describes capacitor charge.") -->
+<img src="./static/img/charge.png"/>
+</div>
+
+
+<p><br />
+We can easily see that it corresponds to a <em>time</em> versus <em>voltage</em> (exponential) function, where the <em>RC</em> element is what we call <strong>time constant</strong>. If you multiply the value of your capacitance with the value of the resistance that you have configured in your circuit, the result will represent how long it took for your capacitor to get charged with approximately 63% of the voltage from the source.</p>
+
+<p>As an example, let&rsquo;s suppose we have a 12V source powering a 1000uF capacitor connected to a 51k resistor: it would take 51 seconds for the capacitor to have stored approximately 7.5V between its terminals.</p>
+
+<h1>Solving the problem: Javascript + Google API</h1>
+
+<p>As I didn&rsquo;t have an oscilloscope, an analog port from a microcontroller board, nor any other resource that would help me to see the graph with the values of time and voltages plotted instantly, the first idea was to use the timer from my cellphone, marking laps and then after plotting the graph on another specific software.</p>
+
+<p>Thus, I thought that it would be really nice to have an application where I could put it all together (timer, time constant calculation and plotted graph) in one single page. The hassle of switching between my phone and my circuit, having to write down the values of times, made me think of this solution that I called <strong>Cap-Charge</strong>.</p>
+
+<h1>First version and demonstration video</h1>
+
+<p>Although I think it would be better to work on all the single bugs and put the <em>almost</em> perfect solution, I decided to put online a very first version (0.1) so as other people use it, we can keep improving it together. I also recorded a video for those who are interested in using it and seeing how it works. (Link is <a href="http://tolribeiro.github.io/cap-charge/" target="_blank">here</a>).</p>
+
+<p>Video link <a href="https://www.youtube.com/watch?v=3nwURuvDR7w" target="_blank">here</a>.</p>
+
+<p>I&rsquo;ve also realized that the application can be very helpful to use in lab experiments in general, so I hope it optimizes your time whether you&rsquo;re doing it in school or at home. Please let me know if you have any questions. Have fun!</p>
+
+			   <hr>
+			   <div class="related-posts">
+				   <h5>Related Posts</h5>
+				   
+						<div class="row">
+							 <div class="col-sm-4 col-md-4 col-lg-4">
+								 <h6 style="text-align: right">
+								 	September 27, 2015
+								 </h6>
+							 </div>
+							 <div class="col-sm-8 col-md-8 col-lg-8">
+								 <h6 style="text-align: left">
+								 	<strong><a href="/first-iOS-App.html">My very fist iOS App: controlling work hours</a></strong>
+								 </h6>
+							 </div>
+						</div>
+					
+						<div class="row">
+							 <div class="col-sm-4 col-md-4 col-lg-4">
+								 <h6 style="text-align: right">
+								 	January 12, 2015
+								 </h6>
+							 </div>
+							 <div class="col-sm-8 col-md-8 col-lg-8">
+								 <h6 style="text-align: left">
+								 	<strong><a href="/SDES-implementation-in-C.html">Simplified DES (SDES): an implementation in C.</a></strong>
+								 </h6>
+							 </div>
+						</div>
+					
+						<div class="row">
+							 <div class="col-sm-4 col-md-4 col-lg-4">
+								 <h6 style="text-align: right">
+								 	October 30, 2014
+								 </h6>
+							 </div>
+							 <div class="col-sm-8 col-md-8 col-lg-8">
+								 <h6 style="text-align: left">
+								 	<strong><a href="/digital-modulation-PSK-matlab.html">Digital Modulation: using PSK as example on MATLAB.</a></strong>
+								 </h6>
+							 </div>
+						</div>
+					
+			   </div>
+			</div>
+		</div>
+	</div>
+	
+
+</div>
+
+
+  </div>
+  <!-- Footer -->
+  <footer>
+    <div id="footer">
+        <div class="container">
+            <p class="text-muted">© All rights reserved. Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> and
+            <a href="http://www.github.com/biomadeira/sustain" target="_blank">sustain</a> with ♥</p>
+        </div>
+    </div>
+</footer>
+<div class="footer"></div>
+
+  
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"
+    integrity="sha256-Sk3nkD6mLTMOF0EOpNtsIry+s1CsaqQC1rVLTAy+0yc= sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ=="
+    crossorigin="anonymous"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="static/js/docs.min.js"></script>
+    <script src="static/js/main.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="static/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
