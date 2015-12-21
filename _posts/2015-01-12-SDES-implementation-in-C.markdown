@@ -7,7 +7,7 @@ categories: programming C criptography
 ---
 A few months ago, I went through a quite challenging experience as a student of an introdutory class on Criptography: I was required to give a presentation on **DES** algorithm.
 
-After going through the titles of the reliable books on the subject, I decided to read *Criptography and Network Security* by William Stallings and one of the first sentences on that page got my attention: 
+After going through the titles of the reliable books on the subject, I decided to read *Criptography and Network Security* by William Stallings and one of the first sentences on that page caught my attention: 
 
 >"[...] the structure of DES and most symmetric ciphers is very complex and cannot be explained as easily [...]".
 

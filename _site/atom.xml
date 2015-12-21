@@ -6,7 +6,7 @@
   
   <link href="http://username.github.io//"/>
   <id>http://username.github.io//</id>
-  <updated>2015-12-20T21:34:56Z</updated>
+  <updated>2015-12-20T23:02:13Z</updated>
   <author>
     <name>Thiago Ribeiro</name>
     <email>tor@ecomp.poli.br</email>
@@ -97,7 +97,7 @@ We can easily see that it corresponds to a <em>time</em> versus <em>voltage</em>
   <updated>2015-01-12T00:27:00Z</updated>
   <content type="html"><![CDATA[ <p>A few months ago, I went through a quite challenging experience as a student of an introdutory class on Criptography: I was required to give a presentation on <strong>DES</strong> algorithm.</p>
 
-<p>After going through the titles of the reliable books on the subject, I decided to read <em>Criptography and Network Security</em> by William Stallings and one of the first sentences on that page got my attention:</p>
+<p>After going through the titles of the reliable books on the subject, I decided to read <em>Criptography and Network Security</em> by William Stallings and one of the first sentences on that page caught my attention:</p>
 
 <blockquote><p>&ldquo;[&hellip;] the structure of DES and most symmetric ciphers is very complex and cannot be explained as easily [&hellip;]&rdquo;.</p></blockquote>
 
