@@ -6,13 +6,52 @@
   
   <link href="http://username.github.io//"/>
   <id>http://username.github.io//</id>
-  <updated>2015-12-20T23:02:13Z</updated>
+  <updated>2015-12-23T00:16:41Z</updated>
   <author>
     <name>Thiago Ribeiro</name>
     <email>tor@ecomp.poli.br</email>
   </author>
   <rights type="text">Copyright © 2015 Thiago Ribeiro. All rights reserved.</rights>
   
+  <entry>
+  <title type="text">Understanding Graph Coloring (vertex): a greedy approach (Part I)</title>
+  <link rel="alternate" type="text/html" href="http://username.github.io//understanding-graph-coloring.html" />
+  <id>http://username.github.io//understanding-graph-coloring</id>
+  <published>2015-12-21T09:48:15Z</published>
+  <updated>2015-12-21T09:48:15Z</updated>
+  <content type="html"><![CDATA[ <p>It is known that the problem of coloring a graph with the smallest number of colors needed (finding its <em>chromatic number</em>), is part of the set of NP-Complete problems.</p>
+
+<p>However, there are methods that can be used to color vertices sequentially, by choosing the colors based on the colors already assigned in the vertex’s neighborhood. In other words, we can use what is called a <em>greedy algorithm</em> to solve the problem.</p>
+
+<p>To explore this approach, imagine that you have a palette with 3 colors available, and the following graph to color:</p>
+
+<p><img src="./static/img/graph1.png" width="330" height="280" class="img-responsive center-block" /></p>
+
+<p>Knowing that you cannot color vertices that are adjacent to each other with the same color, the step-by-step process to color the entire graph of Figure 1 is described below:</p>
+
+<ol>
+<li>Let&rsquo;s say we choose the first color <em>blue</em> (ordered from left to right), to color vertex 1;</li>
+<li>Intuitively, we already know that vertices 2 and 3 cannot be colored by blue anymore, because they are adjacent to 1. Thus, following the order, for vertex 2 we choose the next available color and it is <em>red</em>;</li>
+<li>The next vertex to color, 3, is also adjacent to 1 and 2, and by that we know that neither blue or red can be used to color it, so the next one available is <em>yellow</em>.</li>
+<li>The last vertex, 4, is only adjacent to vertex 2. This tells us that the only color we cannot choose is <em>red</em>. Then going back to the first color available, vertex 4 is colored by <em>blue</em> (it could have been yellow).</li>
+</ol>
+
+
+<p><br /></p>
+
+<p><img src="./static/img/graph-coloring.png" width="940" height="240" class="img-responsive center-block" /></p>
+
+<p><br /></p>
+
+<p>One of the applications that I like the most and where graph coloring can be applied is the frequency assignment in cellular networks. In order to avoid interference or crosstalk, different frequencies are assigned to different cells, and the total number of distinct frequencies should be minimized.</p>
+
+<p>Therefore, if you instead of considering the colors blue, red and yellow, consider them as frequency 1, frenquency 2 and frequency 3, the algorithm that we manually applied to the graph above could have been very useful to configure a simple cellular network or any similar schema described as a graph.</p>
+
+<p>In the next part we&rsquo;ll be going through a C++ implementation that generates code that can be compiled in LaTeX using Tikz, where we&rsquo;ll be able to see it working for generic graphs.</p>
+ ]]></content>
+</entry>
+
+
   <entry>
   <title type="text">My very fist iOS App: controlling work hours</title>
   <link rel="alternate" type="text/html" href="http://username.github.io//first-iOS-App.html" />
@@ -27,7 +66,7 @@
 
 <div style="text-align:center" markdown="1">
 <!--![Message Signal](http://tolribeiro.github.io/mywebsite/downloads/minhasHorasNoData.jpg "First screen, to fill out with the times.")-->
-<img src="./static/img/minhasHorasNoData.jpg" width="360" height="640" />
+<img src="./static/img/minhasHorasNoData.jpg" width="360" height="640" class="img-responsive center-block" />
 </div>
 
 
@@ -36,7 +75,7 @@ In the empty forms, I manually enter the times (24-hour style in Brazil) during 
 <br /></p>
 
 <div style="text-align:center" markdown="1">
-<img src="./static/img/minhasHorasData.jpg" width="360" height="640" />
+<img src="./static/img/minhasHorasData.jpg" width="360" height="640" class="img-responsive center-block"/>
 <!--![Message Signal](http://tolribeiro.github.io/mywebsite/downloads/minhasHorasData.jpg "App showing the elapsed time calculated.")-->
 </div>
 
@@ -52,7 +91,7 @@ As I kept researching about how to calculate elapsed time, I learned more about 
 
 
   <entry>
-  <title type="text">Capacitor charging graph application.</title>
+  <title type="text">Capacitor charging graph application</title>
   <link rel="alternate" type="text/html" href="http://username.github.io//capacitor-charging-graph-application.html" />
   <id>http://username.github.io//capacitor-charging-graph-application</id>
   <published>2015-05-04T19:04:00Z</published>
@@ -63,7 +102,7 @@ As I kept researching about how to calculate elapsed time, I learned more about 
 
 <div style="text-align:center" markdown="1">
 <!-- ![Message Signal](http://tolribeiro.github.io/mywebsite/downloads/charge.png "Function that describes capacitor charge.") -->
-<img src="./static/img/charge.png"/>
+<img src="./static/img/charge.png" class="img-responsive center-block"/>
 </div>
 
 
@@ -90,7 +129,7 @@ We can easily see that it corresponds to a <em>time</em> versus <em>voltage</em>
 
 
   <entry>
-  <title type="text">Simplified DES (SDES): an implementation in C.</title>
+  <title type="text">Simplified DES (SDES): an implementation in C</title>
   <link rel="alternate" type="text/html" href="http://username.github.io//SDES-implementation-in-C.html" />
   <id>http://username.github.io//SDES-implementation-in-C</id>
   <published>2015-01-12T00:27:00Z</published>
@@ -111,10 +150,18 @@ We can easily see that it corresponds to a <em>time</em> versus <em>voltage</em>
 
 <p>The scheme below shows how the plaintext (input) is manipulated to generate the ciphertext (output).</p>
 
-<div style="text-align:center" markdown="1">
+<!-- <div style="text-align:center" markdown="1">  -->
+
+
 <!-- ![Message Signal](http://tolribeiro.github.io/mywebsite/downloads/encryption.png "Simplified DES encryption scheme.") -->
-<img src="./static/img/encryption.png" width="229" height="762"/>
-</div>
+
+
+<p style="text-align:center"><img src="./static/img/encryption.png" width="229" height="762" class="img-responsive center-block"/></p>
+
+
+
+
+<!-- </div> -->
 
 
 <p><br/>
@@ -162,7 +209,7 @@ After all these steps, the <em>output</em> is the encrypted <em>input</em>.</p>
 
 
   <entry>
-  <title type="text">Digital Modulation: using PSK as example on MATLAB.</title>
+  <title type="text">Digital Modulation: using PSK as example on MATLAB</title>
   <link rel="alternate" type="text/html" href="http://username.github.io//digital-modulation-PSK-matlab.html" />
   <id>http://username.github.io//digital-modulation-PSK-matlab</id>
   <published>2014-10-30T18:53:05Z</published>
@@ -188,7 +235,7 @@ After all these steps, the <em>output</em> is the encrypted <em>input</em>.</p>
 
 <div style="text-align:center" markdown="1">
 <!-- ![Message Signal](http://tolribeiro.github.io/mywebsite/downloads/message.png "Message Signal m(t)") -->
-<img src="./static/img/message.png"/>
+<img src="./static/img/message.png" class="img-responsive center-block"/>
 </div>
 
 
@@ -209,7 +256,7 @@ After all these steps, the <em>output</em> is the encrypted <em>input</em>.</p>
 
 <div style="text-align:center" markdown="1">
 <!-- ![Carrier Signal](http://tolribeiro.github.io/mywebsite/downloads/carrier.png "Carrier x(t)") -->
-<img src="./static/img/carrier.png"/>
+<img src="./static/img/carrier.png" class="img-responsive center-block"/>
 </div>
 
 
@@ -228,7 +275,7 @@ After all these steps, the <em>output</em> is the encrypted <em>input</em>.</p>
 
 <div style="text-align:center" markdown="1">
 <!-- ![Modulated Signal](http://tolribeiro.github.io/mywebsite/downloads/modulated.png "PSK Modulated Signal u(t)") -->
-<img src="./static/img/modulated.png"/>
+<img src="./static/img/modulated.png" class="img-responsive center-block"/>
 </div>
 
 
@@ -238,7 +285,7 @@ After all these steps, the <em>output</em> is the encrypted <em>input</em>.</p>
 
 
   <entry>
-  <title type="text">Welcome to my website, powered by Jekyll.</title>
+  <title type="text">Welcome to my website, powered by Jekyll</title>
   <link rel="alternate" type="text/html" href="http://username.github.io//first-post.html" />
   <id>http://username.github.io//first-post</id>
   <published>2014-09-21T18:53:05Z</published>

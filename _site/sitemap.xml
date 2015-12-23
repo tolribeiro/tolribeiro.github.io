@@ -2,10 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://username.github.io//</loc>
-    <lastmod>2015-12-20T23:02:13-03:00</lastmod>
+    <lastmod>2015-12-23T00:16:41-03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
+  
+    <url>
+      <loc>http://username.github.io//understanding-graph-coloring.html</loc>
+      
+        <lastmod>2015-12-21T09:48:15-03:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.5</priority>
+      
+    </url>
   
     <url>
       <loc>http://username.github.io//first-iOS-App.html</loc>
@@ -76,7 +89,7 @@
   <url>
     <loc>http://username.github.io//404.html</loc>
     
-      <lastmod>2015-12-20T23:02:13-03:00</lastmod>
+      <lastmod>2015-12-23T00:16:41-03:00</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -89,7 +102,7 @@
   <url>
     <loc>http://username.github.io//atom.xml</loc>
     
-      <lastmod>2015-12-20T23:02:13-03:00</lastmod>
+      <lastmod>2015-12-23T00:16:41-03:00</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -102,7 +115,7 @@
   <url>
     <loc>http://username.github.io//blog.html</loc>
     
-      <lastmod>2015-12-20T23:02:13-03:00</lastmod>
+      <lastmod>2015-12-23T00:16:41-03:00</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -115,7 +128,7 @@
   <url>
     <loc>http://username.github.io//index.html</loc>
     
-      <lastmod>2015-12-20T23:02:13-03:00</lastmod>
+      <lastmod>2015-12-23T00:16:41-03:00</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -128,7 +141,7 @@
   <url>
     <loc>http://username.github.io//projects.html</loc>
     
-      <lastmod>2015-12-20T23:02:13-03:00</lastmod>
+      <lastmod>2015-12-23T00:16:41-03:00</lastmod>
     
     
       <changefreq>monthly</changefreq>
@@ -141,7 +154,20 @@
   <url>
     <loc>http://username.github.io//sitemap.xml</loc>
     
-      <lastmod>2015-12-20T23:02:13-03:00</lastmod>
+      <lastmod>2015-12-23T00:16:41-03:00</lastmod>
+    
+    
+      <changefreq>monthly</changefreq>
+    
+    
+      <priority>0.3</priority>
+    
+  </url>
+  
+  <url>
+    <loc>http://username.github.io//page2/index.html</loc>
+    
+      <lastmod>2015-12-23T00:16:41-03:00</lastmod>
     
     
       <changefreq>monthly</changefreq>
