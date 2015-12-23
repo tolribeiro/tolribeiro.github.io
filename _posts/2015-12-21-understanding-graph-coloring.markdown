@@ -27,7 +27,7 @@ Knowing that you cannot color vertices that are adjacent to each other with the 
 
 <br />
 
-One of the applications that I like the most and where graph coloring can be applied is the frequency assignment in cellular networks. In order to avoid interference or crosstalk, different frequencies are assigned to different cells, and the total number of distinct frequencies should be minimized. 
+One of the applications that I like the most and where graph coloring can be applied is the frequency assignment in cellular networks. In order to avoid interference (or crosstalk), different frequencies are assigned to different cells, and the total number of distinct frequencies should be minimized. 
 
 Therefore, if you instead of considering the colors blue, red and yellow, consider them as frequency 1, frenquency 2 and frequency 3, the algorithm that we manually applied to the graph above could have been very useful to configure a simple cellular network or any similar schema described as a graph.
 
