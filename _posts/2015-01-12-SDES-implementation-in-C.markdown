@@ -60,7 +60,7 @@ void encrypt(char *input, char *key)
 
 To make it easier to understand, I tried to stick to the names of the variables. The variables *input*, *key* (also the subkeys *k1* and *k2*) and *output* literally mean the same as on the scheme.
 
-You can download the full implementation <a href="http://tolribeiro.github.io/mywebsite/downloads/sdes.c" target="_blank">here</a> or from my <a href="http://github.com/tolribeiro/simplified-des" target="_blank">Github</a>.
+You can download the full implementation <a href="https://raw.githubusercontent.com/tolribeiro/simplified-des/master/sdes.c" target="_blank">here</a> or from my <a href="http://github.com/tolribeiro/simplified-des" target="_blank">Github</a>.
 
 #Final Considerations
 
