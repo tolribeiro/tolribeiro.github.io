@@ -13,18 +13,18 @@ Even though I had heard there was a spreadsheet set up that could do the job, I 
 
 <div style="text-align:center" markdown="1">
 <!--![Message Signal](http://tolribeiro.github.io/mywebsite/downloads/minhasHorasNoData.jpg "First screen, to fill out with the times.")-->
-<img src="./static/img/minhasHorasNoData.jpg" width="360" height="640" class="img-responsive center-block" />
+<img src="./static/img/myHoursData.png" width="360" height="640" class="img-responsive center-block" />
 </div>
 <br />
 In the empty forms, I manually enter the times (24-hour style in Brazil) during the day and press calculate to see how many hours I have worked until the break, the duration of my break, the hours I have worked after my break, and the total, as you can see below: 
 <br />
 
 <div style="text-align:center" markdown="1">
-<img src="./static/img/minhasHorasData.jpg" width="360" height="640" class="img-responsive center-block"/>
+<img src="./static/img/myHoursData.png" width="360" height="640" class="img-responsive center-block"/>
 <!--![Message Signal](http://tolribeiro.github.io/mywebsite/downloads/minhasHorasData.jpg "App showing the elapsed time calculated.")-->
 </div>
 <br />
-As I kept researching about how to calculate elapsed time, I learned more about NSDate and NSTimeInterval, which I believe is a more appropriate way to implement such apps. Therefore, at the time, I designed the algorithm "by hand", by getting the interval between the integers and returning the elapsed time. 
+As I kept researching about how to calculate elapsed time, I learned more about `NSDate` and `NSTimeInterval`, which I believe is a more appropriate way to implement such apps. Therefore, at the time, I designed the algorithm "by hand", by getting the interval between the integers and returning the elapsed time. 
 
 After a couple of months, I considered a lot of other features that I could implement to make my app much more robust, such as: storing the data, enabling the user to use the current time from the phone to mark the time, and so on. 
 
