@@ -6,17 +6,92 @@
   
   <link href="http://username.github.io//"/>
   <id>http://username.github.io//</id>
-  <updated>2015-12-24T15:48:30Z</updated>
+  <updated>2016-01-01T21:10:07Z</updated>
   <author>
     <name>Thiago Ribeiro</name>
     <email>tor@ecomp.poli.br</email>
   </author>
-  <rights type="text">Copyright © 2015 Thiago Ribeiro. All rights reserved.</rights>
+  <rights type="text">Copyright © 2016 Thiago Ribeiro. All rights reserved.</rights>
   
   <entry>
+  <title type="text">Understanding Graph Coloring (vertex): C++ code and visual graph in LaTeX  (Part II)</title>
+  <link rel="alternate" type="text/html" href="http://username.github.io//understanding-graph-coloring-part-II.html" />
+  <id>http://username.github.io//understanding-graph-coloring-part-II</id>
+  <published>2015-12-28T19:00:00Z</published>
+  <updated>2015-12-28T19:00:00Z</updated>
+  <content type="html"><![CDATA[ <p>In the <a href="http://toribeiro.com/understanding-graph-coloring-part-I.html" title="Understanding Graph Coloring (vertex): a greedy approach (Part I)" target="_blank">previous tutorial</a>, we explored a very simple approach, step-by-step, to color a graph using the three colors available (blue, red and yellow).</p>
+
+<p>Now we&rsquo;ll put that approach into practice by using a C++ implementation (from the awesome guys at <a href="http://www.geeksforgeeks.org/graph-coloring-set-2-greedy-algorithm/" target="_blank">GeeksforGeeks</a>) of that algorithm and my contribution to it, that was among others features, to generate a visualization of the graph colored by using the worldwide famous and open-source tool LaTeX and the powerful TikZ package.</p>
+
+<h3><strong>How to input the graph info: <code>input.txt</code></strong></h3>
+
+<p>One of the most important parts of the program is the method that actually colors the graph using the greedy approach.</p>
+
+<p>However, before the <code>greedyColoring()</code> call, that actually colors the graph, the <code>input.txt</code> file is where you enter the information about your graph <code>G(V,E)</code>.</p>
+
+<p>The first line is the number <code>V</code> of vertices and the following ones should contain the edges <code>E</code>. Let&rsquo;s say we have the graph below:</p>
+
+<p><img src="./static/img/input_graph.png" width="242" height="260" class="img-responsive center-block" /></p>
+
+<p>The input file should look like this:</p>
+
+<pre><code>5
+0 1
+0 2
+1 2
+1 3
+1 4
+2 3
+3 4
+</code></pre>
+
+<p>By doing so, the program will read that as <code>G(5, 7)</code> meaning your input graph has 5 vertices and 7 edges which connections are explicited in the lines.</p>
+
+<h3><strong>The <code>greedyColoring()</code> method</strong></h3>
+
+<p>This method contains the main part of the code, which is the <code>result</code> array. This <code>result</code> array of size <code>V</code> is responsible for storing the final colors assigned to the vertices.</p>
+
+<div class="highlight"><pre><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="n">result</span><span class="p">[</span><span class="n">V</span><span class="p">];</span>
+
+<span class="c1">// Assign the first color to first vertex</span>
+<span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    
+<span class="c1">// Initialize remaining V-1 vertices as unassigned</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">u</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">u</span> <span class="o">&lt;</span> <span class="n">V</span><span class="p">;</span> <span class="n">u</span><span class="o">++</span><span class="p">)</span>
+    <span class="n">result</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>  <span class="c1">// no color is assigned to u</span></code></pre></div>
+
+
+<p>The first color assigned is going to be <code>0</code> and the algorithm assigns the remaining ones as it goes through the adjacency list.</p>
+
+<p>As a result, the final <code>result</code> vector for the input graph illustrated here looks like <code>0, 1, 2, 0, 2</code> (5 vertices from 0-4) meaning that vertex 0 is colored in 0, vertex 1 is colored in 1, vertex 2 is colored in 2 and so on.</p>
+
+<p>To handle the output in LaTeX, I created an array that chooses a real color based on the index, i.e., to get the color represented by the number:</p>
+
+<div class="highlight"><pre><code class="language-c" data-lang="c"><span class="n">string</span> <span class="n">key_value_colors</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;red&quot;</span><span class="p">,</span> <span class="s">&quot;yellow&quot;</span><span class="p">,</span> <span class="s">&quot;blue&quot;</span><span class="p">};</span> <span class="c1">// choose color based on index - 0 is red, 1 is yellow etc.</span></code></pre></div>
+
+
+<p>Therefore color 0 is red, color 1 is yellow and color 2 is blue. The program replace them by the ones set in <code>key_value_colors</code>.</p>
+
+<h3><strong><code>LaTeX/TikZ</code> code generated</strong></h3>
+
+<p>By running the C++ code we get a <code>.tex</code> file that can be compiled to see the result of the algorithm graphically. It&rsquo;s important to mention that in order to automatically see the <code>.pdf</code> you need to have LaTeX installed so the <code>pdflatex</code> command is recognized by the Terminal (Linux/Mac OS). Besides, the output for this example should be:</p>
+
+<p><img src="./static/img/graph-colored.png" width="347" height="335" class="img-responsive center-block" /></p>
+
+<p>Finally, in order to demonstrate how to use the program, I recorded this video where I show how to go from a regular graph as the input to the graph colored in a <code>.pdf</code> file as the output.</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4xPjhYzj614" class ="center-block" frameborder="0" allowfullscreen></iframe>
+
+
+
+ ]]></content>
+</entry>
+
+
+  <entry>
   <title type="text">Understanding Graph Coloring (vertex): a greedy approach (Part I)</title>
-  <link rel="alternate" type="text/html" href="http://username.github.io//understanding-graph-coloring.html" />
-  <id>http://username.github.io//understanding-graph-coloring</id>
+  <link rel="alternate" type="text/html" href="http://username.github.io//understanding-graph-coloring-part-I.html" />
+  <id>http://username.github.io//understanding-graph-coloring-part-I</id>
   <published>2015-12-21T09:48:15Z</published>
   <updated>2015-12-21T09:48:15Z</updated>
   <content type="html"><![CDATA[ <p>It is known that the problem of coloring a graph with the smallest number of colors needed (finding its <em>chromatic number</em>), is part of the set of NP-Complete problems.</p>
@@ -197,7 +272,7 @@ After all these steps, the <em>output</em> is the encrypted <em>input</em>.</p>
 
 <p>To make it easier to understand, I tried to stick to the names of the variables. The variables <em>input</em>, <em>key</em> (also the subkeys <em>k1</em> and <em>k2</em>) and <em>output</em> literally mean the same as on the scheme.</p>
 
-<p>You can download the full implementation <a href="http://tolribeiro.github.io/mywebsite/downloads/sdes.c" target="_blank">here</a> or from my <a href="http://github.com/tolribeiro/simplified-des" target="_blank">Github</a>.</p>
+<p>You can download the full implementation <a href="https://raw.githubusercontent.com/tolribeiro/simplified-des/master/sdes.c" target="_blank">here</a> or from my <a href="http://github.com/tolribeiro/simplified-des" target="_blank">Github</a>.</p>
 
 <h1>Final Considerations</h1>
 
