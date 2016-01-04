@@ -29,3 +29,5 @@ As I kept researching about how to calculate elapsed time, I learned more about 
 After a couple of months, I considered a lot of other features that I could implement to make my app much more robust, such as: storing the data, enabling the user to use the current time from the phone to mark the time, and so on. 
 
 Despite not yet implementing these features in my app, the experience of starting something on my own for iOS as a first application, even with such a simple function, was very encouraging and continues to keep me excited about the world of mobile development.
+
+The source code can be found at <a href="https://github.com/tolribeiro/myhours" target="_blank">this repository</a>. 
