@@ -12,7 +12,7 @@ However, there are methods that can be used to color vertices sequentially, by c
 
 To explore this approach, imagine that you have a palette with 3 colors available, and the following graph to color:
 
-<img src="./static/img/graph1.png" width="330" height="280" class="img-responsive center-block" />
+<img src="./static/img/graph1.png" width="287" height="242" class="img-responsive center-block" />
 
 Knowing that you cannot color vertices that are adjacent to each other with the same color, the step-by-step process to color the entire graph of Figure 1 is described below:
 
@@ -23,7 +23,7 @@ Knowing that you cannot color vertices that are adjacent to each other with the 
 
 <br />
 
-<img src="./static/img/graph-coloring.png" width="940" height="240" class="img-responsive center-block" />
+<img src="./static/img/graph-coloring.png" width="700" height="200" class="img-responsive center-block" />
 
 <br />
 
