@@ -6,13 +6,65 @@
   
   <link href="http://username.github.io//"/>
   <id>http://username.github.io//</id>
-  <updated>2016-01-02T22:19:10Z</updated>
+  <updated>2016-01-11T22:42:43Z</updated>
   <author>
     <name>Thiago Ribeiro</name>
     <email>tor@ecomp.poli.br</email>
   </author>
   <rights type="text">Copyright © 2016 Thiago Ribeiro. All rights reserved.</rights>
   
+  <entry>
+  <title type="text">Sound Level Meter with ESP8266, Arduino and iOS: IoT device for sound monitoring</title>
+  <link rel="alternate" type="text/html" href="http://username.github.io//sound-level-meter.html" />
+  <id>http://username.github.io//sound-level-meter</id>
+  <published>2016-01-10T16:17:00Z</published>
+  <updated>2016-01-10T16:17:00Z</updated>
+  <content type="html"><![CDATA[ <h3>The purpose of the project: mapping noise in cities</h3>
+
+<p>Nowadays, even without noticing, we have been surrounded by a lot of noise. This noise comes from all sorts of sources such as bars, cars, trains, parties and so on. When this noise starts affecting our well-being or health, we give it a name: <em>noise pollution</em>.</p>
+
+<p>Therefore, my idea was to create a device that would be cheap to assemble and that could be installed in certain areas of the city, constantly updating data about sound levels to a web server and making them available to the population.</p>
+
+<h3>The hardware: Arduino, Sound Level Meter and ESP8266</h3>
+
+<p>In order to measure the sound level (analog value), I decided to use the SparkFun Sound Detector (SSD). This little IC has three outputs: <code>audio</code>, <code>gate</code> and <code>envelope</code>. As the purpose is to measure the amplitude of sound, to me, the <code>envelope</code> output is what separates this board from the others (figure below).</p>
+
+<p><img src="./static/img/spark.jpg" width="252" height="188" class="img-responsive center-block" /></p>
+
+<p>Besides, the Arduino UNO works as the &ldquo;brain&rdquo; in the system. Regarding the interaction with the SSD, it reads the <code>envelope</code> output into the analog port <code>A0</code> and converts it to a value in decibel, a logarithmic scale used in sound measuring.</p>
+
+<p>Additionally, the ESP8266 module (figure below), this extremely versatile IC was used as a station, connecting the hardware to the local network using WiFi. It is important to mention that the more advanced versions of the ESP have an ADC port, which would exclude the use of an Arduino. However, in order to make it work for this project, two ports of the Arduino were used to transmit and receive data from the ESP (<code>TX</code> and <code>RX</code>).</p>
+
+<p><img src="./static/img/esp.png" width="263" height="206" class="img-responsive center-block" /></p>
+
+<h3>Assembling the parts on a breadboard</h3>
+
+<p>After assembling the parts on a breadboard, I noticed that the user should be able to read the output data in two forms: being near and far from the device. Thus, I added a regular LCD that would print the status and the measure in decibels.
+Furthermore, three LEDs would be able to alert the user about the loudness: if the green one is on, it means the place is quiet, if yellow the ambient noise is moderate and if red, it&rsquo;s loud.</p>
+
+<p><br/>
+<img src="./static/img/slm.png" width="512" height="401" class="img-responsive center-block" />
+<br/></p>
+
+<p>After doing a couple of tests with the ESP using a voltage regulator, I noticed that the response of the module is better when powered by a clean voltage source, which explains the two batteries used to exclusively power it, once the module works with 3,3V.</p>
+
+<h3>The software: iOS App reading the data</h3>
+
+<p>As a way of testing the system, I used the ThingSpeak server to update data directly from my device to the cloud. By using their API, I could read the data coming as a JSON object, parse it, and print it to the user. I set some pins on the map, where the user would hypothetically choose the place he wanted to monitor, and then notify by email or call in case it is being loud.</p>
+
+<p><br/>
+<img src="./static/img/rm.png" width="279" height="496" class="img-responsive center-block" />
+<br/>
+The points on the map are from a central part of Recife, the city I live. The idea is to have several devices spread around a given city, updating data about how noisy is the location at any time. Finally, in the video I explain how the hardware and the software work together. :)</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/G-qB4gLC1Ag" class ="center-block" frameborder="0" allowfullscreen></iframe>
+
+
+
+ ]]></content>
+</entry>
+
+
   <entry>
   <title type="text">Understanding Graph Coloring (vertex): C++ code and visual graph in LaTeX  (Part II)</title>
   <link rel="alternate" type="text/html" href="http://username.github.io//understanding-graph-coloring-part-II.html" />
@@ -100,7 +152,7 @@
 
 <p>To explore this approach, imagine that you have a palette with 3 colors available, and the following graph to color:</p>
 
-<p><img src="./static/img/graph1.png" width="330" height="280" class="img-responsive center-block" /></p>
+<p><img src="./static/img/graph1.png" width="287" height="242" class="img-responsive center-block" /></p>
 
 <p>Knowing that you cannot color vertices that are adjacent to each other with the same color, the step-by-step process to color the entire graph of Figure 1 is described below:</p>
 
@@ -114,7 +166,7 @@
 
 <p><br /></p>
 
-<p><img src="./static/img/graph-coloring.png" width="940" height="240" class="img-responsive center-block" /></p>
+<p><img src="./static/img/graph-coloring.png" width="700" height="200" class="img-responsive center-block" /></p>
 
 <p><br /></p>
 
@@ -161,6 +213,8 @@ As I kept researching about how to calculate elapsed time, I learned more about 
 <p>After a couple of months, I considered a lot of other features that I could implement to make my app much more robust, such as: storing the data, enabling the user to use the current time from the phone to mark the time, and so on.</p>
 
 <p>Despite not yet implementing these features in my app, the experience of starting something on my own for iOS as a first application, even with such a simple function, was very encouraging and continues to keep me excited about the world of mobile development.</p>
+
+<p>The source code can be found at <a href="https://github.com/tolribeiro/myhours" target="_blank">this repository</a>.</p>
  ]]></content>
 </entry>
 
