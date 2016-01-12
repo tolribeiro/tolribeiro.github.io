@@ -6,7 +6,7 @@
   
   <link href="http://username.github.io//"/>
   <id>http://username.github.io//</id>
-  <updated>2016-01-11T22:42:43Z</updated>
+  <updated>2016-01-11T22:59:21Z</updated>
   <author>
     <name>Thiago Ribeiro</name>
     <email>tor@ecomp.poli.br</email>
@@ -15,8 +15,8 @@
   
   <entry>
   <title type="text">Sound Level Meter with ESP8266, Arduino and iOS: IoT device for sound monitoring</title>
-  <link rel="alternate" type="text/html" href="http://username.github.io//sound-level-meter.html" />
-  <id>http://username.github.io//sound-level-meter</id>
+  <link rel="alternate" type="text/html" href="http://username.github.io//sound-level-meter-using-esp8266-arduino-sound-detector.html" />
+  <id>http://username.github.io//sound-level-meter-using-esp8266-arduino-sound-detector</id>
   <published>2016-01-10T16:17:00Z</published>
   <updated>2016-01-10T16:17:00Z</updated>
   <content type="html"><![CDATA[ <h3>The purpose of the project: mapping noise in cities</h3>
