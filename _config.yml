@@ -23,7 +23,7 @@ twitter: username
 linkedin: username
 stackoverflow: username   #e.g: users/2735833/proton1h1
 #Comment out if you don't want disqus 
-disqus: tolribeiro	
+#disqus: tolribeiro	
 google_analytics: UA-61161310-1
 
 
