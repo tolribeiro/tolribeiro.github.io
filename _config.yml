@@ -13,9 +13,9 @@ safe: true
 # edit here to achieve your personal greatness
 url: http://username.github.io/
 baseurl: 
-title: Thiago Ribeiro
+title: Thiago Ribeiro - Computer Engineering 
 author: Thiago Ribeiro
-description: Personal website and blog about personal projects
+description: Personal website and blog about personal projects on Computer Engineering topics
 avatar: profile.png
 email: tor@ecomp.poli.br
 github: biomadeira/sustain # username
