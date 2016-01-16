@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   
-    <title type="text" xml:lang="en">Thiago Ribeiro</title>
+    <title type="text" xml:lang="en">Thiago Ribeiro - Computer Engineering</title>
     <link type="application/atom+xml" rel="self" href="http://username.github.io//atom.xml"/>
   
   <link href="http://username.github.io//"/>
   <id>http://username.github.io//</id>
-  <updated>2016-01-12T22:54:04Z</updated>
+  <updated>2016-01-16T18:52:43Z</updated>
   <author>
     <name>Thiago Ribeiro</name>
     <email>tor@ecomp.poli.br</email>
@@ -19,13 +19,13 @@
   <id>http://username.github.io//sound-level-meter-using-esp8266-arduino-sound-detector</id>
   <published>2016-01-10T16:17:00Z</published>
   <updated>2016-01-10T16:17:00Z</updated>
-  <content type="html"><![CDATA[ <h3>The purpose of the project: mapping noise in cities</h3>
+  <content type="html"><![CDATA[ <h3><strong>The purpose of the project: mapping noise in cities</strong></h3>
 
 <p>Nowadays, even without noticing, we have been surrounded by a lot of noise. This noise comes from all sorts of sources such as bars, cars, trains, parties and so on. When this noise starts affecting our well-being or health, we give it a name: <em>noise pollution</em>.</p>
 
 <p>Therefore, my idea was to create a device that would be cheap to assemble and that could be installed in certain areas of the city, constantly updating data about sound levels to a web server and making them available to the population.</p>
 
-<h3>The hardware: Arduino, Sound Level Meter and ESP8266</h3>
+<h3><strong>The hardware: Arduino, Sound Level Meter and ESP8266</strong></h3>
 
 <p>In order to measure the sound level (analog value), I decided to use the SparkFun Sound Detector (SSD). This little IC has three outputs: <code>audio</code>, <code>gate</code> and <code>envelope</code>. As the purpose is to measure the amplitude of sound, to me, the <code>envelope</code> output is what separates this board from the others (figure below).</p>
 
@@ -37,7 +37,7 @@
 
 <p><img src="./static/img/esp.png" width="263" height="206" class="img-responsive center-block" /></p>
 
-<h3>Assembling the parts on a breadboard</h3>
+<h3><strong>Assembling the parts on a breadboard</strong></h3>
 
 <p>After assembling the parts on a breadboard, I noticed that the user should be able to read the output data in two forms: being near and far from the device. Thus, I added a regular LCD that would print the status and the measure in decibels.
 Furthermore, three LEDs would be able to alert the user about the loudness: if the green one is on, it means the place is quiet, if yellow the ambient noise is moderate and if red, it&rsquo;s loud.</p>
@@ -48,7 +48,7 @@ Furthermore, three LEDs would be able to alert the user about the loudness: if t
 
 <p>After doing a couple of tests with the ESP using a voltage regulator, I noticed that the response of the module is better when powered by a clean voltage source, which explains the two batteries used to exclusively power it, once the module works with 3,3V.</p>
 
-<h3>The software: iOS App reading the data</h3>
+<h3><strong>The software: iOS App reading the data</strong></h3>
 
 <p>As a way of testing the system, I used the ThingSpeak server to update data directly from my device to the cloud. By using their API, I could read the data coming as a JSON object, parse it, and print it to the user. I set some pins on the map, where the user would hypothetically choose the place he wanted to monitor, and then notify by email or call in case it is being loud.</p>
 

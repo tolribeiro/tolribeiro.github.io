@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="author" content="Thiago Ribeiro" />
-    <meta name="description" content="Personal website and blog about personal projects">
+    <meta name="description" content="Personal website and blog about personal projects on Computer Engineering topics">
     <link rel="icon" href="./static/img/favicon.ico" type="image/gif">
 
 
@@ -81,13 +81,13 @@
 	<div class="panel panel-default">
 		<div class="panel-body">
 			<div class="blogpost">
-			  <h3>The purpose of the project: mapping noise in cities</h3>
+			  <h3><strong>The purpose of the project: mapping noise in cities</strong></h3>
 
 <p>Nowadays, even without noticing, we have been surrounded by a lot of noise. This noise comes from all sorts of sources such as bars, cars, trains, parties and so on. When this noise starts affecting our well-being or health, we give it a name: <em>noise pollution</em>.</p>
 
 <p>Therefore, my idea was to create a device that would be cheap to assemble and that could be installed in certain areas of the city, constantly updating data about sound levels to a web server and making them available to the population.</p>
 
-<h3>The hardware: Arduino, Sound Level Meter and ESP8266</h3>
+<h3><strong>The hardware: Arduino, Sound Level Meter and ESP8266</strong></h3>
 
 <p>In order to measure the sound level (analog value), I decided to use the SparkFun Sound Detector (SSD). This little IC has three outputs: <code>audio</code>, <code>gate</code> and <code>envelope</code>. As the purpose is to measure the amplitude of sound, to me, the <code>envelope</code> output is what separates this board from the others (figure below).</p>
 
@@ -99,7 +99,7 @@
 
 <p><img src="./static/img/esp.png" width="263" height="206" class="img-responsive center-block" /></p>
 
-<h3>Assembling the parts on a breadboard</h3>
+<h3><strong>Assembling the parts on a breadboard</strong></h3>
 
 <p>After assembling the parts on a breadboard, I noticed that the user should be able to read the output data in two forms: being near and far from the device. Thus, I added a regular LCD that would print the status and the measure in decibels.
 Furthermore, three LEDs would be able to alert the user about the loudness: if the green one is on, it means the place is quiet, if yellow the ambient noise is moderate and if red, it&rsquo;s loud.</p>
@@ -110,7 +110,7 @@ Furthermore, three LEDs would be able to alert the user about the loudness: if t
 
 <p>After doing a couple of tests with the ESP using a voltage regulator, I noticed that the response of the module is better when powered by a clean voltage source, which explains the two batteries used to exclusively power it, once the module works with 3,3V.</p>
 
-<h3>The software: iOS App reading the data</h3>
+<h3><strong>The software: iOS App reading the data</strong></h3>
 
 <p>As a way of testing the system, I used the ThingSpeak server to update data directly from my device to the cloud. By using their API, I could read the data coming as a JSON object, parse it, and print it to the user. I set some pins on the map, where the user would hypothetically choose the place he wanted to monitor, and then notify by email or call in case it is being loud.</p>
 
@@ -172,6 +172,25 @@ The points on the map are from a central part of Recife, the city I live. The id
 		</div>
 	</div>
 	
+<div class="disqus">
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+		/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+		var disqus_shortname = 'toribeirocom'; // required: replace example with your forum shortname
+		var disqus_identifier = '/sound-level-meter-using-esp8266-arduino-sound-detector.html';
+		var disqus_url = 'http://username.github.io//sound-level-meter-using-esp8266-arduino-sound-detector.html';
+ 
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
 
 </div>
 
