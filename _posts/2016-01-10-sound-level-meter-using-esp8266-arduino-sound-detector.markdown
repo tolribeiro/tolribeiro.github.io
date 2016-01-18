@@ -40,7 +40,7 @@ After doing a couple of tests with the ESP using a voltage regulator, I noticed 
 As a way of testing the system, I used the ThingSpeak server to update data directly from my device to the cloud. By using their API, I could read the data coming as a JSON object, parse it, and print it to the user. I set some pins on the map, where the user would hypothetically choose the place he wanted to monitor, and then notify by email or call in case it is being loud.
 
 <br/>
-<img src="./static/img/rm.png" width="279" height="496" class="img-responsive center-block" />
+<img src="./static/img/print.png" width="875" height="480" class="img-responsive center-block" />
 <br/>
 The points on the map are from a central part of Recife, the city I live. The idea is to have several devices spread around a given city, updating data about how noisy is the location at any time. Finally, in the video I explain how the hardware and the software work together. :)
 
