@@ -29,8 +29,12 @@ Additionally, the ESP8266 module (figure below), this extremely versatile IC was
 After assembling the parts on a breadboard, I noticed that the user should be able to read the output data in two forms: being near and far from the device. Thus, I added a regular LCD that would print the status and the measure in decibels. 
 Furthermore, three LEDs would be able to alert the user about the loudness: if the green one is on, it means the place is quiet, if yellow the ambient noise is moderate and if red, it's loud.
 
-<br/>
+<!-- <br/>
 <img src="./static/img/slm.png" width="512" height="401" class="img-responsive center-block" />
+<br/> -->
+
+<br/>
+<img src="./static/img/alto.JPG" width="447" height="335" class="img-responsive center-block" />
 <br/>
 
 After doing a couple of tests with the ESP using a voltage regulator, I noticed that the response of the module is better when powered by a clean voltage source, which explains the two batteries used to exclusively power it, once the module works with 3,3V.
