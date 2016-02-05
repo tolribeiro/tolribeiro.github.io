@@ -6,7 +6,7 @@ date:   2016-01-10 19:17:00
 categories: ESP8266, Arduino, SparkFun Sound Detector, IoT, hardware, software
 ---
 
-###**The purpose of the project: mapping noise in cities**
+### **The purpose of the project: mapping noise in cities**
 
 Nowadays, even without noticing, we have been surrounded by a lot of noise. This noise comes from all sorts of sources such as bars, cars, trains, parties and so on. When this noise starts affecting our well-being or health, we give it a name: *noise pollution*. 
 
@@ -24,7 +24,7 @@ Additionally, the ESP8266 module (figure below), this extremely versatile IC was
 
 <img src="./static/img/esp.png" width="263" height="206" class="img-responsive center-block" />
 
-###**Assembling the parts on a breadboard**
+### **Assembling the parts on a breadboard**
 
 After assembling the parts on a breadboard, I noticed that the user should be able to read the output data in two forms: being near and far from the device. Thus, I added a regular LCD that would print the status and the measure in decibels. 
 Furthermore, three LEDs would be able to alert the user about the loudness: if the green one is on, it means the place is quiet, if yellow the ambient noise is moderate and if red, it's loud.
@@ -39,7 +39,7 @@ Furthermore, three LEDs would be able to alert the user about the loudness: if t
 
 After doing a couple of tests with the ESP using a voltage regulator, I noticed that the response of the module is better when powered by a clean voltage source, which explains the two batteries used to exclusively power it, once the module works with 3,3V.
 
-###**The software: iOS App reading the data**
+### **The software: iOS App reading the data**
 
 As a way of testing the system, I used the ThingSpeak server to update data directly from my device to the cloud. By using their API, I could read the data coming as a JSON object, parse it, and print it to the user. I set some pins on the map, where the user would hypothetically choose the place he wanted to monitor, and then notify by email or call in case it is being loud.
 
