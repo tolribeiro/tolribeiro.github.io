@@ -19,7 +19,7 @@ We can easily see that it corresponds to a *time* versus *voltage* (exponential)
 
 As an example, let's suppose we have a 12V source powering a 1000uF capacitor connected to a 51k resistor: it would take 51 seconds for the capacitor to have stored approximately 7.5V between its terminals.
 
-#Solving the problem: Javascript + Google API
+## Solving the problem: Javascript + Google API
 
 As I didn't have an oscilloscope, an analog port from a microcontroller board, nor any other resource that would help me to see the graph with the values of time and voltages plotted instantly, the first idea was to use the timer from my cellphone, marking laps and then after plotting the graph on another specific software. 
 

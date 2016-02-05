@@ -15,7 +15,7 @@ Therefore, in the next paragraph, it said that studying a simplified version (SD
 
 After a couple of hours struggling in the beginning, I finally got the idea behind one of the most important symmetric ciphers algorithms.     
 
-#The encryption process
+## The encryption process
 
 The simplified DES operates on a 8-bit block of *plaintext* to generate a 8-bit block of *ciphertext*. These types of algorithms are called **block ciphers**. It also uses a 10-bit key, generating two subkeys in the process, used as input for the most delicate part of the algorithm, the *fk function*. <br>
 
@@ -29,17 +29,17 @@ The scheme below shows how the plaintext (input) is manipulated to generate the 
 <br/>
 After all these steps, the *output* is the encrypted *input*. 
 
-#The keys generation step
+## The keys generation step
 
 This step only involves single permutations and shifts. I strongly believe that if you take a look at the implementation you won't have any problems understanding it.
 
-#The decryption process
+## The decryption process
 
 DES is a **symmetric cipher**, which means that it uses the same key to *encrypt* and *decrypt* the data. Since my idea was only show the step-by-step encryption process, I decided not to write the function to decrypt it. 
 
 However, you might not have any problems doing it either, because the only thing you'll need to do is the encryption process backwards, i.e.: *output -> IP(output) -> fk(output, k2) -> SW(output) -> fk(output, k1) -> IP Inverse (output) -> input*.
 
-#The implementation in C
+## The implementation in C
 
 Based on the scheme shown above, I implemented the algorithm and came up with the *encrypt* function, that summarizes the encryption process of Simplified DES.  
 
@@ -62,7 +62,7 @@ To make it easier to understand, I tried to stick to the names of the variables.
 
 You can download the full implementation <a href="https://raw.githubusercontent.com/tolribeiro/simplified-des/master/sdes.c" target="_blank">here</a> or from my <a href="http://github.com/tolribeiro/simplified-des" target="_blank">Github</a>.
 
-#Final Considerations
+## Final Considerations
 
 This algorithm was developed by Professor Edward Schaefer of Santa Clara University. I recommend that you read the appendix from *Criptography and Network Security*, explaining the algorithm in details (<a href="http://mercury.webster.edu/aleshunas/COSC%205130/G-SDES.pdf" target="_blank">here</a>). 
 
