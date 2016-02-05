@@ -12,7 +12,7 @@ They were talking about the <a href="https://en.wikipedia.org/wiki/ACM_Internati
 
 ### **My experience with programming contests**
 
-In 2010, I decided to participate in the first phase with two pals from school and other groups of friends that formed teams to compete as well. We decided to go to Federal University of Sergipe in Aracaju, where my friends and I solved 2 out of 10 questions, and with this result we conquered the 4th place
+In 2010, I decided to participate in the first phase with two pals from school and other groups of friends that formed teams to compete as well. We decided to go to Federal University of Sergipe in Aracaju, where my friends and I solved 2 out of 10 questions, and with this result we conquered the 4th place:
 
 <img src="http://toribeiro.com/static/img/team.png" width="1275" height="150" class="img-responsive center-block" />
 
@@ -32,7 +32,7 @@ I decided to start solving the <a href="http://codeforces.com/problemset?order=B
 
 This is going to be one of my hobbies throughout the year. I'll be trying to submit as many questions per week as possible so by the end of the year I hope to have something to say about the gains mentioned by John.
 
-Leave your comment if you decide to join this game too and exercise your brain with some programming challenges. 
+Leave your comment if you decide to join this game too and exercise your brain with some programming challenges. :)
 
 
 
