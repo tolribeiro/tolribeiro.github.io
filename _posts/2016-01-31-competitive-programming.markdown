@@ -6,13 +6,13 @@ date:   2016-01-31 10:47:00
 categories: Competitive Programming, CodeForces, C/C++ programming
 ---
 
-A couple of years ago when I was getting to my second year of college, some of my friends found out about this thing called **competitive programming**, and they were all super excited about it. 
+A couple of years ago when I was starting to learn a lot of cool stuff about programming in college, some of my friends found out about this thing called **competitive programming**, and they were all super excited about it. 
 
 They were talking about the <a href="https://en.wikipedia.org/wiki/ACM_International_Collegiate_Programming_Contest" target="_blanket">ACM International Collegiate Programming Contest</a>, which I would summarize as a "World Cup" of programming where you form a team and try to "score" as much as you can by solving challenging programming problems in a short period of time.
 
 ### **My experience with programming contests**
 
-In 2010, I decided to participate in the first phase with two pals from school and other groups of friends that formed teams to compete as well. We decided to go to Federal University of Sergipe in Aracaju, where my friends and I solved 2 out of 10 questions, and with this result we conquered the 4th place:
+I decided to participate in the first phase with two pals from school and other groups of friends that formed teams to compete as well. We decided to go to Federal University of Sergipe in Aracaju, where my friends and I solved 2 out of 10 questions, and with this result we conquered the 4th place:
 
 <img src="http://toribeiro.com/static/img/team.png" width="1275" height="150" class="img-responsive center-block" />
 
