@@ -6,7 +6,7 @@ date:   2016-01-31 10:47:00
 categories: Competitive Programming, CodeForces, C/C++ programming
 ---
 
-A couple of years ago when I was getting to me second year of college, a couple of friends foud out about this thing called **competitive programming**, and they were all super excited about it. 
+A couple of years ago when I was getting to my second year of college, some of my friends found out about this thing called **competitive programming**, and they were all super excited about it. 
 
 They were talking about the <a href="https://en.wikipedia.org/wiki/ACM_International_Collegiate_Programming_Contest" target="_blanket">ACM International Collegiate Programming Contest</a>, which I would summarize as a "World Cup" of programming where you form a team and try to "score" as much as you can by solving challenging programming problems in a short period of time.
 
@@ -16,13 +16,13 @@ In 2010, I decided to participate in the first phase with two pals from school a
 
 <img src="http://toribeiro.com/static/img/team.png" width="1275" height="150" class="img-responsive center-block" />
 
-Also, the team of my other friends got 4 and ended up in 2nd, which allowed them to compete the national phase. (!) 
+Also, the team of my other friends solved 4 and ended up in 2nd, which allowed them to compete the national phase. (!) 
 
 ### **Does competitive programming make me a better programmer?**
 
-As time passed and things at school were getting harder, I decided to put this new "thing" aside and dedicate myself fully to my classes...until now.
+As time passed, things at school were getting harder so I decided to put this new "thing" aside and dedicate myself fully to my classes...until now.
 
-Not that I think of being a competitor for real or dedicating a lot of energy on this now, but <a href="http://simpleprogrammer.com/2010/04/02/so-you-want-to-become-a-better-programmer-topcoder/" target="_blanket">this article</a> by *John Sonmez* from the `simpleprogrammer.com` made me realize that doing competitive programming problems as a hobby can be a great and *fun* way of starting to make gains again in my programming skills.
+Not that I think of being a competitor for real, dedicating a lot of energy on this now, but <a href="http://simpleprogrammer.com/2010/04/02/so-you-want-to-become-a-better-programmer-topcoder/" target="_blanket">this article</a> by *John Sonmez* from the `simpleprogrammer.com` inspired me and made me realize that doing competitive programming problems as a hobby can be a great and *fun* way of starting to make gains again in my programming skills. 
 
 ### **What is the best platform to solve questions?**
 
