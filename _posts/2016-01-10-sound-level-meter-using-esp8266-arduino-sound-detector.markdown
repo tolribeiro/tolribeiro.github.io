@@ -12,7 +12,7 @@ Nowadays, even without noticing, we have been surrounded by a lot of noise. This
 
 Therefore, my idea was to create a device that would be cheap to assemble and that could be installed in certain areas of the city, constantly updating data about sound levels to a web server and making them available to the population.
 
-###**The hardware: Arduino, Sound Level Meter and ESP8266**
+### **The hardware: Arduino, Sound Level Meter and ESP8266**
 
 In order to measure the sound level (analog value), I decided to use the SparkFun Sound Detector (SSD). This little IC has three outputs: `audio`, `gate` and `envelope`. As the purpose is to measure the amplitude of sound, to me, the `envelope` output is what separates this board from the others (figure below). 
 
