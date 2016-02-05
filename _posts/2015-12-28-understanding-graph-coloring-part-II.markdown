@@ -10,7 +10,7 @@ In the <a href="http://toribeiro.com/understanding-graph-coloring-part-I.html" t
 
 Now we'll put that approach into practice by using a C++ implementation (from the awesome guys at <a href="http://www.geeksforgeeks.org/graph-coloring-set-2-greedy-algorithm/" target="_blank">GeeksforGeeks</a>) of that algorithm and my contribution to it, that was among others features, to generate a visualization of the graph colored by using the worldwide famous and open-source tool LaTeX and the powerful TikZ package. 
 
-###**How to input the graph info: `input.txt`**
+### **How to input the graph info: `input.txt`**
 
 One of the most important parts of the program is the method that actually colors the graph using the greedy approach. 
 
@@ -34,7 +34,7 @@ The input file should look like this:
 ```
 By doing so, the program will read that as `G(5, 7)` meaning your input graph has 5 vertices and 7 edges which connections are explicited in the lines.
 
-###**The `greedyColoring()` method**
+### **The `greedyColoring()` method**
 
 This method contains the main part of the code, which is the `result` array. This `result` array of size `V` is responsible for storing the final colors assigned to the vertices. 
 
@@ -61,7 +61,7 @@ To handle the output in LaTeX, I created an array that chooses a real color base
 
 Therefore color 0 is red, color 1 is yellow and color 2 is blue. The program replace them by the ones set in `key_value_colors`.
 
-###**`LaTeX/TikZ` code generated**
+### **`LaTeX/TikZ` code generated**
 
 By running the C++ code we get a `.tex` file that can be compiled to see the result of the algorithm graphically. It's important to mention that in order to automatically see the `.pdf` you need to have LaTeX installed so the `pdflatex` command is recognized by the Terminal (Linux/Mac OS). Besides, the output for this example should be:
 
