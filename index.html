@@ -1,18 +1,62 @@
 ---
-layout: home
+layout: default
+title: Home
 ---
 
-<section id="about">
-	<div class="container">
-	  <div class="avatar">
-		<img class="img-circle" src="{{ site.baseurl }}static/img/{{ site.avatar }}" alt="Responsive image">
-	  </div>
-	  <h3>Hi, I'm <strong>Thiago Ribeiro</strong>, a Computer Engineer from Brazil.</h3>
-	  <h3>I love sharing content about technology on the web.</h3>
-	  <h3>Have a look at some of my projects that I <a href="{{ site.baseurl }}/blog.html"> blog</a> about.</h3>
-	  <h3>For more check out my academic &amp; professional <a href="http://toribeiro.com/static/resume/TR-Resume-English.pdf" target="_blank">Resume</a>.</h3>
-	  <h3>You can contact me by <a href="mailto:{{ site.email }}">email</a> or... </h3>
-	  <h3>Feel free to choose :)</h3>
-	  {% include social.html %}
-	</div>
-</section>
+<div class="home">
+  <div class="post-list">
+
+    {% for post in site.posts limit:5%}
+
+    <article class="post_card post">
+      <header class="post_header">
+        <h2 class="post_title"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title}}</a></h2>
+        <time class="post_date">{{ post.date | date: "%d %B %Y, %A" }}</time>
+      </header>
+      <div class="post_excerpt">
+        <p>
+          {% if post.description %}
+          {{ post.description}}
+          {% else %}
+          {{ post.excerpt }}
+          {% endif %} 
+          <a class="read-more" href="{{ post.url | prepend: site.baseurl }}"> »  </a>
+        </p> 
+      </div>
+      <footer class="post_meta">
+
+
+        {% if post.location %}
+        <span class="author-location">
+          <div data-icon="ei-location"></div>
+          <a href=https://www.google.com/maps/place/{{post.location}}">{{ post.location }}</a>
+        </span>
+        {% endif %}
+        <!--
+        {% for category in post.categories %}
+        <a href="{{"/category/" | append: category | prepend: site.baseurl }}">
+          <data data-icon="ei-archive"></data>
+          {{category}}</a>
+        {% endfor %}
+        -->
+
+        <!--
+        {% if post.author %}
+        <span class="author_meta">
+          <img src="{{site.baseurl}}/assets/img/{{post.author}}.jpg"></img>
+          <span>David Lin</span>
+        </span>
+        {% endif %}
+        -->
+
+        <!--p class="readmore">
+          <a href=""><data data-icon="ei-arrow-right"></data>Read this article  </a>
+        </p-->
+      </footer>
+      <hr/>
+    </article>
+    {% endfor %}
+
+    <div class="pagination older-post"><a href="./archive"><data data-icon="ei-arrow-right"></data> Archive  </a></div>
+  </div>
+</div>

@@ -1,46 +1,27 @@
 ---
-layout: layout
+layout: default
 ---
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-<div class="container">
-	<div class="blog-post">
-		<h3>
-		  <strong><a href="{{ page.url }}">{{ page.title }}</a></strong>
-		</h3>
-	</div>
-	<div class="blog-title">
-		<h4>
-		{{ page.date | date: "%B %e, %Y" }}
-			&nbsp;&nbsp;
-			{% for tag in page.tags %}
-			 <span class="label label-success">{{ tag }}</span>
-			{% endfor %}
-		</h4>
-	</div>
-	<div class="panel panel-default">
-		<div class="panel-body">
-			<div class="blogpost">
-			  {{ content }}
-			   <hr>
-			   <div class="related-posts">
-				   <h5>Related Posts</h5>
-				   {% for post in site.related_posts limit:3 %}
-						<div class="row">
-							 <div class="col-sm-4 col-md-4 col-lg-4">
-								 <h6 style="text-align: right">
-								 	{{ post.date | date: "%B %e, %Y" }}
-								 </h6>
-							 </div>
-							 <div class="col-sm-8 col-md-8 col-lg-8">
-								 <h6 style="text-align: left">
-								 	<strong><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></strong>
-								 </h6>
-							 </div>
-						</div>
-					{% endfor %}
-			   </div>
-			</div>
-		</div>
-	</div>
-	{% include disqus.html %}
-</div>
+  <header class="artilce_header">
+    <h1 class="artilce_title" itemprop="name headline">{{ page.title }}</h1>
+    <p class="artilce_meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
+  </header>
+
+  <div class="article-content" itemprop="articleBody">
+    {{ page.content }}
+  </div>
+
+  <footer class="article-footer">
+
+  {% include share.html %}
+
+  <hr/>
+
+  {% include author.html %}
+
+  </footer>
+
+  {% include dq.html %}
+
+</article>
