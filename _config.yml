@@ -1,31 +1,31 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
-
-# Site settings
-title: Your awesome title
-email: your-email@domain.com
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "/jekyll-simple" # the subpath of your site, e.g. /blog
-url: "http://wildflame.me" # the base hostname & protocol for your site
-twitter_username: Taffyer 
-github_username:  wild-flame 
-
-# Build settings
+# top level stuff you probably don't need to touch
+highlighter: rouge
 markdown: kramdown
-kramdown:
-  input: GFM
+rdiscount:
+  extensions: [smart]
+permalink: /:title.html
+paginate: 5
+gems: [jekyll-paginate]
+port: 3000
+safe: true
 
-# Third-party services
-# just leave someone empty to disable it
-# google_analytics: 
-disqus_shortname:
 
-# used this for post_excerpt at index_page
-excerpt_separator: <!--description-->
+# edit here to achieve your personal greatness
+url: http://username.github.io/
+baseurl: 
+title: Thiago Ribeiro - Computer Engineering 
+author: Thiago Ribeiro
+description: Personal website and blog about personal projects on Computer Engineering topics
+avatar: profile.png
+email: tor@ecomp.poli.br
+github: biomadeira/sustain # username
+twitter: username
+linkedin: username
+stackoverflow: username   #e.g: users/2735833/proton1h1
+#Comment out if you don't want disqus 
+disqus: tolribeiro	
+google_analytics: UA-61161310-1
+
+
+# needed for travis-ci build
+exclude: [vendor]

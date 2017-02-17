@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Thiago Ribeiro" />
+    <meta name="description" content="Personal website and blog about personal projects on Computer Engineering topics">
+    <link rel="icon" href="./static/img/favicon.ico" type="image/gif">
+
+
+    
+      <title>Understanding Graph Coloring (vertex): a greedy approach (Part I)</title>
+    
+	
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
+    crossorigin="anonymous">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+	<!-- Custom styles for this template -->
+    <link rel="stylesheet" type="text/css" href="static/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" href="static/css/bootstrap.icon-large.min.css" />
+    <link rel="stylesheet" type="text/css" href="static/css/syntax.css" />
+
+    <!-- Google Analytics -->
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61161310-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </head>
+  <!-- Main Body-->
+  <body>
+  <!-- Wrap all page content here -->
+  <div id="wrap">
+    <!-- Navbar header -->
+    <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="http://toribeiro.com"><i class="fa fa-home"></i></a>
+    </div>
+    <div id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="blog.html">BLOG</a></li>
+        <!--<li><a href="projects.html">PROJECTS</a></li>-->
+        <!-- <li><a href="./static/resume/TR-Resume-English.pdf" target="_blank">RESUME</a></li> -->
+        <li><a href="./static/resume/TR-Resume-English.pdf" target="_blank">RESUME</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="container">
+	<div class="blog-post">
+		<h3>
+		  <strong><a href="/understanding-graph-coloring-part-I.html">Understanding Graph Coloring (vertex): a greedy approach (Part I)</a></strong>
+		</h3>
+	</div>
+	<div class="blog-title">
+		<h4>
+		December 21, 2015
+			&nbsp;&nbsp;
+			
+		</h4>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<div class="blogpost">
+			  <p>It is known that the problem of coloring a graph with the smallest number of colors needed (finding its <em>chromatic number</em>), is part of the set of NP-Complete problems.</p>
+
+<p>However, there are methods that can be used to color vertices sequentially, by choosing the colors based on the colors already assigned in the vertex’s neighborhood. In other words, we can use what is called a <em>greedy algorithm</em> to solve the problem.</p>
+
+<p>To explore this approach, imagine that you have a palette with 3 colors available, and the following graph to color:</p>
+
+<p><img src="./static/img/graph1.png" width="287" height="242" class="img-responsive center-block" /></p>
+
+<p>Knowing that you cannot color vertices that are adjacent to each other with the same color, the step-by-step process to color the entire graph of Figure 1 is described below:</p>
+
+<ol>
+<li>Let&rsquo;s say we choose the first color <em>blue</em> (ordered from left to right), to color vertex 1;</li>
+<li>Intuitively, we already know that vertices 2 and 3 cannot be colored by blue anymore, because they are adjacent to 1. Thus, following the order, for vertex 2 we choose the next available color and it is <em>red</em>;</li>
+<li>The next vertex to color, 3, is also adjacent to 1 and 2, and by that we know that neither blue or red can be used to color it, so the next one available is <em>yellow</em>.</li>
+<li>The last vertex, 4, is only adjacent to vertex 2. This tells us that the only color we cannot choose is <em>red</em>. Then going back to the first color available, vertex 4 is colored by <em>blue</em> (it could have been yellow).</li>
+</ol>
+
+
+<p><br /></p>
+
+<p><img src="./static/img/graph-coloring.png" width="700" height="200" class="img-responsive center-block" /></p>
+
+<p><br /></p>
+
+<p>One of the applications that I like the most and where graph coloring can be applied is the frequency assignment in cellular networks. In order to avoid interference (or crosstalk), different frequencies are assigned to adjacent cells, and the total number of distinct frequencies should be minimized.</p>
+
+<p>Therefore, if you instead of considering the colors blue, red and yellow, consider them as frequency 1, frenquency 2 and frequency 3, the algorithm that we manually applied to the graph above could have been very useful to configure a simple cellular network or any similar schema described as a graph.</p>
+
+<p>In the next part we&rsquo;ll be going through a C++ implementation that generates code that can be compiled in LaTeX using Tikz, where we&rsquo;ll be able to see it working for generic graphs.</p>
+
+			   <hr>
+			   <div class="related-posts">
+				   <h5>Related Posts</h5>
+				   
+						<div class="row">
+							 <div class="col-sm-4 col-md-4 col-lg-4">
+								 <h6 style="text-align: right">
+								 	January 10, 2016
+								 </h6>
+							 </div>
+							 <div class="col-sm-8 col-md-8 col-lg-8">
+								 <h6 style="text-align: left">
+								 	<strong><a href="/sound-level-meter-using-esp8266-arduino-sound-detector.html">Sound Level Meter with ESP8266, Arduino and iOS: IoT device for sound monitoring</a></strong>
+								 </h6>
+							 </div>
+						</div>
+					
+						<div class="row">
+							 <div class="col-sm-4 col-md-4 col-lg-4">
+								 <h6 style="text-align: right">
+								 	December 28, 2015
+								 </h6>
+							 </div>
+							 <div class="col-sm-8 col-md-8 col-lg-8">
+								 <h6 style="text-align: left">
+								 	<strong><a href="/understanding-graph-coloring-part-II.html">Understanding Graph Coloring (vertex): C++ code and visual graph in LaTeX  (Part II)</a></strong>
+								 </h6>
+							 </div>
+						</div>
+					
+						<div class="row">
+							 <div class="col-sm-4 col-md-4 col-lg-4">
+								 <h6 style="text-align: right">
+								 	September 27, 2015
+								 </h6>
+							 </div>
+							 <div class="col-sm-8 col-md-8 col-lg-8">
+								 <h6 style="text-align: left">
+								 	<strong><a href="/first-iOS-App.html">My very fist iOS App: controlling work hours</a></strong>
+								 </h6>
+							 </div>
+						</div>
+					
+			   </div>
+			</div>
+		</div>
+	</div>
+	
+<div class="disqus">
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+		/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+		var disqus_shortname = 'toribeirocom'; // required: replace example with your forum shortname
+		var disqus_identifier = '/understanding-graph-coloring-part-I.html';
+		var disqus_url = 'http://username.github.io//understanding-graph-coloring-part-I.html';
+ 
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+
+</div>
+
+
+  </div>
+  <!-- Footer -->
+  <footer>
+    <div id="footer">
+        <div class="container">
+            <p class="text-muted">© Adapted by Thiago Ribeiro, powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> and
+            <a href="http://www.github.com/biomadeira/sustain" target="_blank">sustain</a>.</p>
+        </div>
+    </div>
+</footer>
+<div class="footer"></div>
+
+  
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"
+    integrity="sha256-Sk3nkD6mLTMOF0EOpNtsIry+s1CsaqQC1rVLTAy+0yc= sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ=="
+    crossorigin="anonymous"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="static/js/docs.min.js"></script>
+    <script src="static/js/main.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="static/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
