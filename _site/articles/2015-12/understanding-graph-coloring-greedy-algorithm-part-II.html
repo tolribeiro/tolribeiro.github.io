@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Understanding Graph Coloring (vertex): C++ code and visual graph in LaTeX  (Part II)</title>
+  <meta name="description" content="In the previous tutorial, we explored a very simple approach, step-by-step, to color a graph using the three colors available (blue, red and yellow). Now we'...">
+
+  <!-- CSS files -->
+  <link rel="stylesheet" href="http://localhost:4000/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://localhost:4000/css/main.css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/2015-12/understanding-graph-coloring-greedy-algorithm-part-II">
+  <link rel="alternate" type="application/rss+xml" title="thiagoribeiro" href="http://localhost:4000/feed.xml" />
+
+  <!-- Icons -->
+  <!-- 16x16 -->
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+  <!-- 32x32 -->
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+</head>
+
+
+<body>
+  <div class="row">
+    <div class="col s12 m3">
+      <div class="table cover">
+        
+
+<div class="cover-card table-cell table-middle">
+  
+  <img src="http://localhost:4000/img/profile.png" alt="" class="avatar">
+  
+  <a href="http://localhost:4000/" class="author_name">thiagoribeiro</a>
+  <span class="author_job">Computer Engineer</span>
+  <span class="author_bio mbm">Brazilian. Feijoada anyone?</span>
+  <nav class="nav">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="http://localhost:4000/">home</a>
+        <span>/</span>
+      </li>
+       
+      <li class="nav-item">
+        <a href="http://localhost:4000/archive/">Archive</a>
+        
+          <span>/</span>
+        
+      </li>
+        
+      <li class="nav-item">
+        <a href="http://localhost:4000/categories/">Categories</a>
+        
+          <span>/</span>
+        
+      </li>
+           
+    </ul>
+  </nav>
+  <script type="text/javascript">
+</script>
+<div class="social-links">
+  <ul>
+    <li><a href="mailto:thiago@toribeiro.com?subject=Hello from Website" class="social-link-item" target="_blank"><i class="fa fa-fw fa-envelope"></i></a></li>
+    <li><a href="https://www.linkedin.com/in/tolribeiro" class="social-link-item" target="_blank"><i class="fa fa-fw fa-linkedin"></i></a></li>
+    <li><a href="skype:tolribeiro?call" class="social-link-item" target="_blank"><i class="fa fa-fw fa-skype"></i></a></li>
+    <li><a href="http://github.com/tolribeiro" class="social-link-item" target="_blank"><i class="fa fa-fw fa-github"></i></a></li>
+    <li><a href="http://instagram.com/ticonerval" class="social-link-item" target="_blank"><i class="fa fa-fw fa-instagram"></i></a></li>
+  </ul>
+</div>
+
+</div>
+
+      </div>
+    </div>
+    <div class="col s12 m9">
+      <div class="post-listing">
+        <a class="btn" href= "http://localhost:4000/" >
+  Home
+</a>
+
+
+
+<div id="post">
+  <header class="post-header">
+    <h1 title="Understanding Graph Coloring (vertex): C++ code and visual graph in LaTeX  (Part II)">Understanding Graph Coloring (vertex): C++ code and visual graph in LaTeX  (Part II)</h1>
+    <span class="post-meta">
+      <span class="post-date">
+        28 DEC 2015
+      </span>
+      •
+      <span class="read-time" title="Estimated read time">
+  
+  
+    3 mins read
+  
+</span>
+
+    </span>
+
+  </header>
+
+  <article class="post-content">
+    <p>In the <a href="http://toribeiro.com/understanding-graph-coloring-part-I.html" title="Understanding Graph Coloring (vertex): a greedy approach (Part I)" target="_blank">previous tutorial</a>, we explored a very simple approach, step-by-step, to color a graph using the three colors available (blue, red and yellow).	</p>
+
+<p>Now we’ll put that approach into practice by using a C++ implementation (from the awesome guys at <a href="http://www.geeksforgeeks.org/graph-coloring-set-2-greedy-algorithm/" target="_blank">GeeksforGeeks</a>) of that algorithm and my contribution to it, that was among others features, to generate a visualization of the graph colored by using the worldwide famous and open-source tool LaTeX and the powerful TikZ package. </p>
+
+<h3 id="how-to-input-the-graph-info-inputtxt"><strong>How to input the graph info: <code>input.txt</code></strong></h3>
+
+<p>One of the most important parts of the program is the method that actually colors the graph using the greedy approach. </p>
+
+<p>However, before the <code>greedyColoring()</code> call, that actually colors the graph, the <code>input.txt</code> file is where you enter the information about your graph <code>G(V,E)</code>. </p>
+
+<p>The first line is the number <code>V</code> of vertices and the following ones should contain the edges <code>E</code>. Let’s say we have the graph below:</p>
+
+<div style="text-align:center">
+  <p><img src="/img/input_graph.png" width="242" height="266" class="img-responsive center-block" /></p>
+</div>
+
+<p>The input file should look like this:</p>
+
+<pre><code>5
+0 1
+0 2
+1 2
+1 3
+1 4
+2 3
+3 4
+</code></pre>
+<p>By doing so, the program will read that as <code>G(5, 7)</code> meaning your input graph has 5 vertices and 7 edges which connections are explicited in the lines.</p>
+
+<h3 id="the-greedycoloring-method"><strong>The <code>greedyColoring()</code> method</strong></h3>
+
+<p>This method contains the main part of the code, which is the <code>result</code> array. This <code>result</code> array of size <code>V</code> is responsible for storing the final colors assigned to the vertices. </p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="kt">int</span> <span class="n">result</span><span class="p">[</span><span class="n">V</span><span class="p">];</span>
+
+<span class="c1">// Assign the first color to first vertex
+</span><span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	
+<span class="c1">// Initialize remaining V-1 vertices as unassigned
+</span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">u</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">u</span> <span class="o">&lt;</span> <span class="n">V</span><span class="p">;</span> <span class="n">u</span><span class="o">++</span><span class="p">)</span>
+    <span class="n">result</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>  <span class="o">//</span> <span class="n">no</span> <span class="n">color</span> <span class="n">is</span> <span class="n">assigned</span> <span class="n">to</span> <span class="n">u</span></code></pre></figure>
+
+<p>The first color assigned is going to be <code>0</code> and the algorithm assigns the remaining ones as it goes through the adjacency list.</p>
+
+<p>As a result, the final <code>result</code> vector for the input graph illustrated here looks like <code>0, 1, 2, 0, 2</code> (5 vertices from 0-4) meaning that vertex 0 is colored in 0, vertex 1 is colored in 1, vertex 2 is colored in 2 and so on.</p>
+
+<p>To handle the output in LaTeX, I created an array that chooses a real color based on the index, i.e., to get the color represented by the number:</p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c">	<span class="n">string</span> <span class="n">key_value_colors</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="s">"red"</span><span class="p">,</span> <span class="s">"yellow"</span><span class="p">,</span> <span class="s">"blue"</span><span class="p">};</span> <span class="o">//</span> <span class="n">choose</span> <span class="n">color</span> <span class="n">based</span> <span class="n">on</span> <span class="n">index</span> <span class="o">-</span> <span class="mi">0</span> <span class="n">is</span> <span class="n">red</span><span class="p">,</span> <span class="mi">1</span> <span class="n">is</span> <span class="n">yellow</span> <span class="n">etc</span><span class="p">.</span></code></pre></figure>
+
+<p>Therefore color 0 is red, color 1 is yellow and color 2 is blue. The program replace them by the ones set in <code>key_value_colors</code>.</p>
+
+<h3 id="latextikz-code-generated"><strong><code>LaTeX/TikZ</code> code generated</strong></h3>
+
+<p>By running the C++ code we get a <code>.tex</code> file that can be compiled to see the result of the algorithm graphically. It’s important to mention that in order to automatically see the <code>.pdf</code> you need to have LaTeX installed so the <code>pdflatex</code> command is recognized by the Terminal (Linux/Mac OS). Besides, the output for this example should be:</p>
+
+<div style="text-align:center">
+  <p><img src="/img/graph-colored.png" width="347" height="335" class="img-responsive center-block" /></p>
+</div>
+
+<p>Finally, in order to demonstrate how to use the program, I recorded this video where I show how to go from a regular graph as the input to the graph colored in a <code>.pdf</code> file as the output.</p>
+
+<div style="text-align:center">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/4xPjhYzj614" class="center-block" frameborder="0" allowfullscreen=""></iframe>
+</div>
+
+
+  </article>
+</div>
+
+<div class="share-buttons">
+  <h6>Share on: </h6>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/articles/2015-12/understanding-graph-coloring-greedy-algorithm-part-II" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/articles/2015-12/understanding-graph-coloring-greedy-algorithm-part-II" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=http://localhost:4000/articles/2015-12/understanding-graph-coloring-greedy-algorithm-part-II" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+  </ul>
+</div><!-- end share-buttons -->
+
+
+
+        <footer>
+  &copy; 2017 thiagoribeiro. Powered by <a href="http://jekyllrb.com/">Jekyll</a>.
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="http://localhost:4000/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="http://localhost:4000/js/main.js"></script>
+
+
+</body>
+</html>

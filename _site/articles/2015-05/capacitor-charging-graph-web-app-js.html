@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Capacitor charging graph web app in JS</title>
+  <meta name="description" content="Recently, I faced the task of analyzing the graph of a capacitor in a simple circuit configuration: a voltage source powering the given capacitor connected t...">
+
+  <!-- CSS files -->
+  <link rel="stylesheet" href="http://localhost:4000/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://localhost:4000/css/main.css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/2015-05/capacitor-charging-graph-web-app-js">
+  <link rel="alternate" type="application/rss+xml" title="thiagoribeiro" href="http://localhost:4000/feed.xml" />
+
+  <!-- Icons -->
+  <!-- 16x16 -->
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+  <!-- 32x32 -->
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+</head>
+
+
+<body>
+  <div class="row">
+    <div class="col s12 m3">
+      <div class="table cover">
+        
+
+<div class="cover-card table-cell table-middle">
+  
+  <img src="http://localhost:4000/img/profile.png" alt="" class="avatar">
+  
+  <a href="http://localhost:4000/" class="author_name">thiagoribeiro</a>
+  <span class="author_job">Computer Engineer</span>
+  <span class="author_bio mbm">Brazilian. Feijoada anyone?</span>
+  <nav class="nav">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="http://localhost:4000/">home</a>
+        <span>/</span>
+      </li>
+       
+      <li class="nav-item">
+        <a href="http://localhost:4000/archive/">Archive</a>
+        
+          <span>/</span>
+        
+      </li>
+        
+      <li class="nav-item">
+        <a href="http://localhost:4000/categories/">Categories</a>
+        
+          <span>/</span>
+        
+      </li>
+           
+    </ul>
+  </nav>
+  <script type="text/javascript">
+</script>
+<div class="social-links">
+  <ul>
+    <li><a href="mailto:thiago@toribeiro.com?subject=Hello from Website" class="social-link-item" target="_blank"><i class="fa fa-fw fa-envelope"></i></a></li>
+    <li><a href="https://www.linkedin.com/in/tolribeiro" class="social-link-item" target="_blank"><i class="fa fa-fw fa-linkedin"></i></a></li>
+    <li><a href="skype:tolribeiro?call" class="social-link-item" target="_blank"><i class="fa fa-fw fa-skype"></i></a></li>
+    <li><a href="http://github.com/tolribeiro" class="social-link-item" target="_blank"><i class="fa fa-fw fa-github"></i></a></li>
+    <li><a href="http://instagram.com/ticonerval" class="social-link-item" target="_blank"><i class="fa fa-fw fa-instagram"></i></a></li>
+  </ul>
+</div>
+
+</div>
+
+      </div>
+    </div>
+    <div class="col s12 m9">
+      <div class="post-listing">
+        <a class="btn" href= "http://localhost:4000/" >
+  Home
+</a>
+
+
+
+<div id="post">
+  <header class="post-header">
+    <h1 title="Capacitor charging graph web app in JS">Capacitor charging graph web app in JS</h1>
+    <span class="post-meta">
+      <span class="post-date">
+        5 MAY 2015
+      </span>
+      •
+      <span class="read-time" title="Estimated read time">
+  
+  
+    2 mins read
+  
+</span>
+
+    </span>
+
+  </header>
+
+  <article class="post-content">
+    <p>Recently, I faced the task of analyzing the graph of a capacitor in a simple circuit configuration: a voltage source powering the given capacitor connected to a resistor in series. </p>
+
+<p>The result of this configuration is pretty straightforward: my capacitor will get charged with a certain value of voltage from the source (<em>almost</em> 100%), respecting the exponential function described below:</p>
+
+<div style="text-align:center">
+  <!-- ![Message Signal](http://tolribeiro.github.io/mywebsite/downloads/charge.png "Function that describes capacitor charge.") -->
+  <p><img src="/img/charge.png" class="img-responsive center-block" /></p>
+
+</div>
+<p><br />
+We can easily see that it corresponds to a <em>time</em> versus <em>voltage</em> (exponential) function, where the <em>RC</em> element is what we call <strong>time constant</strong>. If you multiply the value of your capacitance with the value of the resistance that you have configured in your circuit, the result will represent how long it took for your capacitor to get charged with approximately 63% of the voltage from the source.   </p>
+
+<p>As an example, let’s suppose we have a 12V source powering a 1000uF capacitor connected to a 51k resistor: it would take 51 seconds for the capacitor to have stored approximately 7.5V between its terminals.</p>
+
+<h3 id="solving-the-problem-javascript--google-api">Solving the problem: Javascript + Google API</h3>
+
+<p>As I didn’t have an oscilloscope, an analog port from a microcontroller board, nor any other resource that would help me to see the graph with the values of time and voltages plotted instantly, the first idea was to use the timer from my cellphone, marking laps and then after plotting the graph on another specific software. </p>
+
+<p>Thus, I thought that it would be really nice to have an application where I could put it all together (timer, time constant calculation and plotted graph) in one single page. The hassle of switching between my phone and my circuit, having to write down the values of times, made me think of this solution that I called <strong>Cap-Charge</strong>.</p>
+
+<h3 id="first-version-and-demonstration-video">First version and demonstration video</h3>
+
+<p>Although I think it would be better to work on all the single bugs and put the <em>almost</em> perfect solution, I decided to put online a very first version (0.1) so as other people use it, we can keep improving it together. I also recorded a video for those who are interested in using it and seeing how it works (Link is <a href="http://tolribeiro.github.io/cap-charge/" target="_blank">here</a>).</p>
+
+<div style="text-align:center">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/3nwURuvDR7w" class="center-block" frameborder="0" allowfullscreen=""></iframe>
+</div>
+
+<p>I’ve also realized that the application can be very helpful to use in lab experiments in general, so I hope it optimizes your time whether you’re doing it in school or at home. Please let me know if you have any questions. Have fun!</p>
+
+
+  </article>
+</div>
+
+<div class="share-buttons">
+  <h6>Share on: </h6>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/articles/2015-05/capacitor-charging-graph-web-app-js" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/articles/2015-05/capacitor-charging-graph-web-app-js" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=http://localhost:4000/articles/2015-05/capacitor-charging-graph-web-app-js" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+  </ul>
+</div><!-- end share-buttons -->
+
+
+
+        <footer>
+  &copy; 2017 thiagoribeiro. Powered by <a href="http://jekyllrb.com/">Jekyll</a>.
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="http://localhost:4000/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="http://localhost:4000/js/main.js"></script>
+
+
+</body>
+</html>

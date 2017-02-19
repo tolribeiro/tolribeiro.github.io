@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Simplified DES (SDES): an implementation in C</title>
+  <meta name="description" content="A few months ago, I went through a quite challenging experience as a student of an introdutory class on Criptography: I was required to give a presentation o...">
+
+  <!-- CSS files -->
+  <link rel="stylesheet" href="http://localhost:4000/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://localhost:4000/css/main.css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/2015-01/simplified-DES-implementation-in-C">
+  <link rel="alternate" type="application/rss+xml" title="thiagoribeiro" href="http://localhost:4000/feed.xml" />
+
+  <!-- Icons -->
+  <!-- 16x16 -->
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+  <!-- 32x32 -->
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+</head>
+
+
+<body>
+  <div class="row">
+    <div class="col s12 m3">
+      <div class="table cover">
+        
+
+<div class="cover-card table-cell table-middle">
+  
+  <img src="http://localhost:4000/img/profile.png" alt="" class="avatar">
+  
+  <a href="http://localhost:4000/" class="author_name">thiagoribeiro</a>
+  <span class="author_job">Computer Engineer</span>
+  <span class="author_bio mbm">Brazilian. Feijoada anyone?</span>
+  <nav class="nav">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="http://localhost:4000/">home</a>
+        <span>/</span>
+      </li>
+       
+      <li class="nav-item">
+        <a href="http://localhost:4000/archive/">Archive</a>
+        
+          <span>/</span>
+        
+      </li>
+        
+      <li class="nav-item">
+        <a href="http://localhost:4000/categories/">Categories</a>
+        
+          <span>/</span>
+        
+      </li>
+           
+    </ul>
+  </nav>
+  <script type="text/javascript">
+</script>
+<div class="social-links">
+  <ul>
+    <li><a href="mailto:thiago@toribeiro.com?subject=Hello from Website" class="social-link-item" target="_blank"><i class="fa fa-fw fa-envelope"></i></a></li>
+    <li><a href="https://www.linkedin.com/in/tolribeiro" class="social-link-item" target="_blank"><i class="fa fa-fw fa-linkedin"></i></a></li>
+    <li><a href="skype:tolribeiro?call" class="social-link-item" target="_blank"><i class="fa fa-fw fa-skype"></i></a></li>
+    <li><a href="http://github.com/tolribeiro" class="social-link-item" target="_blank"><i class="fa fa-fw fa-github"></i></a></li>
+    <li><a href="http://instagram.com/ticonerval" class="social-link-item" target="_blank"><i class="fa fa-fw fa-instagram"></i></a></li>
+  </ul>
+</div>
+
+</div>
+
+      </div>
+    </div>
+    <div class="col s12 m9">
+      <div class="post-listing">
+        <a class="btn" href= "http://localhost:4000/" >
+  Home
+</a>
+
+
+
+<div id="post">
+  <header class="post-header">
+    <h1 title="Simplified DES (SDES): an implementation in C">Simplified DES (SDES): an implementation in C</h1>
+    <span class="post-meta">
+      <span class="post-date">
+        12 JAN 2015
+      </span>
+      •
+      <span class="read-time" title="Estimated read time">
+  
+  
+    3 mins read
+  
+</span>
+
+    </span>
+
+  </header>
+
+  <article class="post-content">
+    <p>A few months ago, I went through a quite challenging experience as a student of an introdutory class on Criptography: I was required to give a presentation on <strong>DES</strong> algorithm.</p>
+
+<p>After going through the titles of the reliable books on the subject, I decided to read <em>Criptography and Network Security</em> by William Stallings and one of the first sentences on that page caught my attention: </p>
+
+<blockquote>
+  <p>“The structure of DES and most symmetric ciphers is very complex and cannot be explained as easily.”.</p>
+</blockquote>
+
+<p>Therefore, in the next paragraph, it said that studying a simplified version (SDES) would enhance the understanding of DES, and I can guarantee that it actually does. </p>
+
+<p>After a couple of hours struggling in the beginning, I finally got the idea behind one of the most important symmetric ciphers algorithms.     </p>
+
+<h2 id="the-encryption-process">The encryption process</h2>
+
+<p>The simplified DES operates on a 8-bit block of <em>plaintext</em> to generate a 8-bit block of <em>ciphertext</em>. These types of algorithms are called <strong>block ciphers</strong>. It also uses a 10-bit key, generating two subkeys in the process, used as input for the most delicate part of the algorithm, the <em>fk function</em>. <br /></p>
+
+<p>The scheme below shows how the plaintext (input) is manipulated to generate the ciphertext (output).</p>
+
+<!-- <div style="text-align:center" markdown="1">  -->
+<!-- ![Message Signal](http://tolribeiro.github.io/mywebsite/downloads/encryption.png "Simplified DES encryption scheme.") -->
+<p style="text-align:center"><img src="/img/encryption.png" width="383" height="1270" class="img-responsive center-block" /></p>
+
+<!-- </div> -->
+<p><br />
+After all these steps, the <em>output</em> is the encrypted <em>input</em>. </p>
+
+<h2 id="the-keys-generation-step">The keys generation step</h2>
+
+<p>This step only involves single permutations and shifts. I strongly believe that if you take a look at the implementation you won’t have any problems understanding it.</p>
+
+<h2 id="the-decryption-process">The decryption process</h2>
+
+<p>DES is a <strong>symmetric cipher</strong>, which means that it uses the same key to <em>encrypt</em> and <em>decrypt</em> the data. Since my idea was only show the step-by-step encryption process, I decided not to write the function to decrypt it. </p>
+
+<p>However, you might not have any problems doing it either, because the only thing you’ll need to do is the encryption process backwards, i.e.: <em>output -&gt; IP(output) -&gt; fk(output, k2) -&gt; SW(output) -&gt; fk(output, k1) -&gt; IP Inverse (output) -&gt; input</em>.</p>
+
+<h2 id="the-implementation-in-c">The implementation in C</h2>
+
+<p>Based on the scheme shown above, I implemented the algorithm and came up with the <em>encrypt</em> function, that summarizes the encryption process of Simplified DES.  </p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="c1">// ------------------------------------------------
+// ---            Encrypt Function   			---
+// ------------------------------------------------
+</span>
+<span class="kt">void</span> <span class="nf">encrypt</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">input</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">key</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">initial_permutation</span><span class="p">(</span><span class="n">input</span><span class="p">);</span> <span class="c1">// IP
+</span>	<span class="n">fk</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">k1</span><span class="p">);</span> <span class="c1">// fk with subkey k1
+</span>	<span class="n">switch_halves</span><span class="p">(</span><span class="n">output</span><span class="p">);</span>	<span class="c1">// SW
+</span>	<span class="n">fk</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">k2</span><span class="p">);</span> <span class="c1">// fk with subkey k2
+</span>	<span class="n">initial_permutation_inverse</span><span class="p">(</span><span class="n">output</span><span class="p">);</span> <span class="c1">// IP Inverse
+</span><span class="p">}</span></code></pre></figure>
+
+<p>To make it easier to understand, I tried to stick to the names of the variables. The variables <em>input</em>, <em>key</em> (also the subkeys <em>k1</em> and <em>k2</em>) and <em>output</em> literally mean the same as on the scheme.</p>
+
+<p>You can download the full implementation <a href="https://raw.githubusercontent.com/tolribeiro/simplified-des/master/sdes.c" target="_blank">here</a> or from my <a href="http://github.com/tolribeiro/simplified-des" target="_blank">Github</a>.</p>
+
+<h2 id="final-considerations">Final Considerations</h2>
+
+<p>This algorithm was developed by Professor Edward Schaefer of Santa Clara University. I recommend that you read the appendix from <em>Criptography and Network Security</em>, explaining the algorithm in details (<a href="http://mercury.webster.edu/aleshunas/COSC%205130/G-SDES.pdf" target="_blank">here</a>). </p>
+
+<p>Furthermore, take a look at this PDF document (<a href="http://ict.siit.tu.ac.th/~steven/css322y11s2/unprotected/CSS322Y11S2H01-DES-Examples.pdf" target="_blank">here</a>), written by Professor Steven Gordon of Sirindhorn International Institute of Technology, which contains some examples that you may want to verify with my implementation.</p>
+
+  </article>
+</div>
+
+<div class="share-buttons">
+  <h6>Share on: </h6>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/articles/2015-01/simplified-DES-implementation-in-C" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/articles/2015-01/simplified-DES-implementation-in-C" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=http://localhost:4000/articles/2015-01/simplified-DES-implementation-in-C" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+  </ul>
+</div><!-- end share-buttons -->
+
+
+
+        <footer>
+  &copy; 2017 thiagoribeiro. Powered by <a href="http://jekyllrb.com/">Jekyll</a>.
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="http://localhost:4000/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="http://localhost:4000/js/main.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Digital Modulation: using PSK as example on MATLAB</title>
+  <meta name="description" content="This semester I had some exposure to digital modulation and learned some techniques applied to the studies of Communications Systems, which we'll put into pr...">
+
+  <!-- CSS files -->
+  <link rel="stylesheet" href="http://localhost:4000/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://localhost:4000/css/main.css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/2014-10/digital-modulation-PSK-matlab">
+  <link rel="alternate" type="application/rss+xml" title="thiagoribeiro" href="http://localhost:4000/feed.xml" />
+
+  <!-- Icons -->
+  <!-- 16x16 -->
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+  <!-- 32x32 -->
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+</head>
+
+
+<body>
+  <div class="row">
+    <div class="col s12 m3">
+      <div class="table cover">
+        
+
+<div class="cover-card table-cell table-middle">
+  
+  <img src="http://localhost:4000/img/profile.png" alt="" class="avatar">
+  
+  <a href="http://localhost:4000/" class="author_name">thiagoribeiro</a>
+  <span class="author_job">Computer Engineer</span>
+  <span class="author_bio mbm">Brazilian. Feijoada anyone?</span>
+  <nav class="nav">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="http://localhost:4000/">home</a>
+        <span>/</span>
+      </li>
+       
+      <li class="nav-item">
+        <a href="http://localhost:4000/archive/">Archive</a>
+        
+          <span>/</span>
+        
+      </li>
+        
+      <li class="nav-item">
+        <a href="http://localhost:4000/categories/">Categories</a>
+        
+          <span>/</span>
+        
+      </li>
+           
+    </ul>
+  </nav>
+  <script type="text/javascript">
+</script>
+<div class="social-links">
+  <ul>
+    <li><a href="mailto:thiago@toribeiro.com?subject=Hello from Website" class="social-link-item" target="_blank"><i class="fa fa-fw fa-envelope"></i></a></li>
+    <li><a href="https://www.linkedin.com/in/tolribeiro" class="social-link-item" target="_blank"><i class="fa fa-fw fa-linkedin"></i></a></li>
+    <li><a href="skype:tolribeiro?call" class="social-link-item" target="_blank"><i class="fa fa-fw fa-skype"></i></a></li>
+    <li><a href="http://github.com/tolribeiro" class="social-link-item" target="_blank"><i class="fa fa-fw fa-github"></i></a></li>
+    <li><a href="http://instagram.com/ticonerval" class="social-link-item" target="_blank"><i class="fa fa-fw fa-instagram"></i></a></li>
+  </ul>
+</div>
+
+</div>
+
+      </div>
+    </div>
+    <div class="col s12 m9">
+      <div class="post-listing">
+        <a class="btn" href= "http://localhost:4000/" >
+  Home
+</a>
+
+
+
+<div id="post">
+  <header class="post-header">
+    <h1 title="Digital Modulation: using PSK as example on MATLAB">Digital Modulation: using PSK as example on MATLAB</h1>
+    <span class="post-meta">
+      <span class="post-date">
+        30 OCT 2014
+      </span>
+      •
+      <span class="read-time" title="Estimated read time">
+  
+  
+    2 mins read
+  
+</span>
+
+    </span>
+
+  </header>
+
+  <article class="post-content">
+    <p>This semester I had some exposure to digital modulation and learned some techniques applied to the studies of Communications Systems, which we’ll put into practice by using the powerful software MATLAB.</p>
+
+<p>For this tutorial, I’ll pick up the <strong>PSK</strong> (Phase-Shift Keying). It uses shifts in phase of a signal to represent data. However, if you want and feel comfortable, you can also try it using <em>ASK</em>, <em>FSK</em> or <em>QAM</em>, that along with PSK, form the group of main types of digital modulation widely used in a variety of modern systems, such as cellular networks and so on. </p>
+
+<p>First, let’s suppose we have a message <em>m(t)</em>, which is a bit-stream signal, that we want to send through an analog channel. For this example, we consider the frequency of <em>m(t)</em> as <em>2 Hz</em>. Therefore, we have:</p>
+
+<figure class="highlight"><pre><code class="language-matlab" data-lang="matlab"><span class="n">f2</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>                       	<span class="c1">% m(t) frequency</span>
+<span class="n">t</span> <span class="o">=</span> <span class="mi">0</span><span class="p">:</span><span class="o">.</span><span class="mi">001</span><span class="p">:</span><span class="mi">1</span><span class="p">;</span>			<span class="c1">% time definition</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">square</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="o">*</span><span class="n">f2</span><span class="o">*</span><span class="n">t</span><span class="p">);</span>          <span class="c1">% message </span>
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">m</span><span class="p">);</span>                     <span class="c1">% plotting m(t)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s1">'Time'</span><span class="p">);</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s1">'Amplitude'</span><span class="p">);</span>
+<span class="nb">title</span><span class="p">(</span><span class="s1">'Message Signal m(t)'</span><span class="p">);</span>
+<span class="nb">grid</span> <span class="n">on</span><span class="p">;</span></code></pre></figure>
+
+<p>After running this, you should see this image, which represents the message we wanna send: </p>
+
+<div style="text-align:center">
+  <!-- ![Message Signal](http://tolribeiro.github.io/mywebsite/downloads/message.png "Message Signal m(t)") -->
+  <p><img src="/img/message.png" class="img-responsive center-block" /></p>
+</div>
+
+<p>Now we can write the definition for the carrier <em>x(t)</em>, a <em>sin()</em> function with frequency of <em>10 Hz</em> and amplitude <em>A</em> of <em>5</em>.</p>
+
+<figure class="highlight"><pre><code class="language-matlab" data-lang="matlab"><span class="n">A</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>                        <span class="c1">% amplitude</span>
+<span class="n">f1</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>                      <span class="c1">% frequency</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">A</span><span class="o">.*</span><span class="nb">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="o">*</span><span class="n">f1</span><span class="o">*</span><span class="n">t</span><span class="p">);</span>        <span class="c1">% carrier function</span>
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">);</span>                   <span class="c1">% plotting x(t)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s1">'Time'</span><span class="p">);</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s1">'Amplitude'</span><span class="p">);</span>
+<span class="nb">title</span><span class="p">(</span><span class="s1">'Carrier x(t)'</span><span class="p">);</span>
+<span class="nb">grid</span> <span class="n">on</span><span class="p">;</span></code></pre></figure>
+
+<p>Now we can see the carrier <em>x(t)</em> we’re gonna use to modulate our message <em>m(t)</em>:</p>
+
+<div style="text-align:center">
+  <!-- ![Carrier Signal](http://tolribeiro.github.io/mywebsite/downloads/carrier.png "Carrier x(t)") -->
+  <p><img src="/img/carrier.png" class="img-responsive center-block" /></p>
+</div>
+
+<p>Finally, we can plot the modulated (in phase) signal <em>u(t)</em> by just multiplying <em>m(t)</em> by <em>x(t)</em>. We’re gonna call <em>u(t)</em> the modulated signal.</p>
+
+<figure class="highlight"><pre><code class="language-matlab" data-lang="matlab"><span class="n">v</span> <span class="o">=</span> <span class="n">x</span><span class="o">.*</span><span class="n">u</span><span class="p">;</span>                      <span class="c1">% Carrier multiplied by message</span>
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">v</span><span class="p">);</span>                    <span class="c1">% Plotting u(t), modulated signal</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s1">'Time'</span><span class="p">);</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s1">'Amplitude'</span><span class="p">);</span>
+<span class="nb">title</span><span class="p">(</span><span class="s1">'PSK Modulated Signal u(t)'</span><span class="p">);</span>
+<span class="nb">grid</span> <span class="n">on</span><span class="p">;</span></code></pre></figure>
+
+<p>Which we can see as:</p>
+
+<div style="text-align:center">
+  <!-- ![Modulated Signal](http://tolribeiro.github.io/mywebsite/downloads/modulated.png "PSK Modulated Signal u(t)") -->
+  <p><img src="/img/modulated.png" class="img-responsive center-block" /></p>
+</div>
+
+<p>Finally, our message is modulated in <strong>PSK</strong>, once the phase of the signal does not change while <em>m(t)</em> is equal to <em>1</em>, being reversed (changing by 180 degrees) when it goes to <em>0</em>.</p>
+
+  </article>
+</div>
+
+<div class="share-buttons">
+  <h6>Share on: </h6>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/articles/2014-10/digital-modulation-PSK-matlab" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/articles/2014-10/digital-modulation-PSK-matlab" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=http://localhost:4000/articles/2014-10/digital-modulation-PSK-matlab" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+  </ul>
+</div><!-- end share-buttons -->
+
+
+
+        <footer>
+  &copy; 2017 thiagoribeiro. Powered by <a href="http://jekyllrb.com/">Jekyll</a>.
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="http://localhost:4000/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="http://localhost:4000/js/main.js"></script>
+
+
+</body>
+</html>

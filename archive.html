@@ -1,34 +1,35 @@
 ---
-layout: default
-title: Archive
+layout: page
+title:  Archive
+permalink: /archive/
 ---
 
-<div>
-
-  <h2>Archive</h2>
-
-  <section class="archive_list">
-    {% for category in site.categories %}
-
-    <div class="category-name">
-      <h2>{{ category | first }}</h2>
-    </div>
-    {% for post in category.last %}
-
-    <div class="post_title">
-      <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title}}</a>
-      <span class="date">{{ post.date | date: "%-d %b, %Y" }}</span>
+<div class="archive">
+  <div class="timeline" id="timeline">
+    {% for post in site.posts %}
+    {% unless post.next %}
+    <div class="archive-title">
+      <h4 class="archive-year">{{ post.date | date: '%Y' }}</h4>
     </div>
 
+    <ul>
+    {% else %}
+      {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
+      {% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
+    {% if year != nyear %}
+    </ul>
+    <div class="archive-title">
+      <h4 class="archive-year">{{ post.date | date: '%Y' }}</h4>
+    </div>
+
+    <ul>
+    {% endif %}
+    {% endunless %}
+    <li>
+      <div style="width:60px;float:left;">{{ post.date | date: "%b %-d" }}</div><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></li>
     {% endfor %}
+    </ul>
 
-    {% endfor %}
+  </div>
 
-  </section>
-
-  <footer class="article-footer" mar>
-    {% include author.html %}
-  </footer>
 </div>
-
-

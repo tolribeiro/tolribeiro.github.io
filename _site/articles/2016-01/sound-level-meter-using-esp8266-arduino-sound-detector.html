@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Sound Level Meter with ESP8266, Arduino and iOS: IoT device for sound monitoring</title>
+  <meta name="description" content="Nowadays, even without noticing, we have been surrounded by a lot of noise. This noise comes from all sorts of sources such as bars, cars, trains, parties an...">
+
+  <!-- CSS files -->
+  <link rel="stylesheet" href="http://localhost:4000/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://localhost:4000/css/main.css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/2016-01/sound-level-meter-using-esp8266-arduino-sound-detector">
+  <link rel="alternate" type="application/rss+xml" title="thiagoribeiro" href="http://localhost:4000/feed.xml" />
+
+  <!-- Icons -->
+  <!-- 16x16 -->
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.ico">
+  <!-- 32x32 -->
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.png">
+</head>
+
+
+<body>
+  <div class="row">
+    <div class="col s12 m3">
+      <div class="table cover">
+        
+
+<div class="cover-card table-cell table-middle">
+  
+  <img src="http://localhost:4000/img/profile.png" alt="" class="avatar">
+  
+  <a href="http://localhost:4000/" class="author_name">thiagoribeiro</a>
+  <span class="author_job">Computer Engineer</span>
+  <span class="author_bio mbm">Brazilian. Feijoada anyone?</span>
+  <nav class="nav">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="http://localhost:4000/">home</a>
+        <span>/</span>
+      </li>
+       
+      <li class="nav-item">
+        <a href="http://localhost:4000/archive/">Archive</a>
+        
+          <span>/</span>
+        
+      </li>
+        
+      <li class="nav-item">
+        <a href="http://localhost:4000/categories/">Categories</a>
+        
+          <span>/</span>
+        
+      </li>
+           
+    </ul>
+  </nav>
+  <script type="text/javascript">
+</script>
+<div class="social-links">
+  <ul>
+    <li><a href="mailto:thiago@toribeiro.com?subject=Hello from Website" class="social-link-item" target="_blank"><i class="fa fa-fw fa-envelope"></i></a></li>
+    <li><a href="https://www.linkedin.com/in/tolribeiro" class="social-link-item" target="_blank"><i class="fa fa-fw fa-linkedin"></i></a></li>
+    <li><a href="skype:tolribeiro?call" class="social-link-item" target="_blank"><i class="fa fa-fw fa-skype"></i></a></li>
+    <li><a href="http://github.com/tolribeiro" class="social-link-item" target="_blank"><i class="fa fa-fw fa-github"></i></a></li>
+    <li><a href="http://instagram.com/ticonerval" class="social-link-item" target="_blank"><i class="fa fa-fw fa-instagram"></i></a></li>
+  </ul>
+</div>
+
+</div>
+
+      </div>
+    </div>
+    <div class="col s12 m9">
+      <div class="post-listing">
+        <a class="btn" href= "http://localhost:4000/" >
+  Home
+</a>
+
+
+
+<div id="post">
+  <header class="post-header">
+    <h1 title="Sound Level Meter with ESP8266, Arduino and iOS: IoT device for sound monitoring">Sound Level Meter with ESP8266, Arduino and iOS: IoT device for sound monitoring</h1>
+    <span class="post-meta">
+      <span class="post-date">
+        10 JAN 2016
+      </span>
+      •
+      <span class="read-time" title="Estimated read time">
+  
+  
+    3 mins read
+  
+</span>
+
+    </span>
+
+  </header>
+
+  <article class="post-content">
+    <h3 id="the-purpose-of-the-project-mapping-noise-in-cities"><strong>The purpose of the project: mapping noise in cities</strong></h3>
+
+<p>Nowadays, even without noticing, we have been surrounded by a lot of noise. This noise comes from all sorts of sources such as bars, cars, trains, parties and so on. When this noise starts affecting our well-being or health, we give it a name: <em>noise pollution</em>. </p>
+
+<p>Therefore, my idea was to create a device that would be cheap to assemble and that could be installed in certain areas of the city, constantly updating data about sound levels to a web server and making them available to the population.</p>
+
+<h3 id="the-hardware-arduino-sound-level-meter-and-esp8266"><strong>The hardware: Arduino, Sound Level Meter and ESP8266</strong></h3>
+
+<p>In order to measure the sound level (analog value), I decided to use the SparkFun Sound Detector (SSD). This little IC has three outputs: <code>audio</code>, <code>gate</code> and <code>envelope</code>. As the purpose is to measure the amplitude of sound, to me, the <code>envelope</code> output is what separates this board from the others (figure below). </p>
+
+<div style="text-align:center">
+  <p><img src="/img/spark.jpg" width="252" height="188" class="img-responsive center-block" /></p>
+</div>
+
+<p>Besides, the Arduino UNO works as the “brain” in the system. Regarding the interaction with the SSD, it reads the <code>envelope</code> output into the analog port <code>A0</code> and converts it to a value in decibel, a logarithmic scale used in sound measuring.</p>
+
+<p>Additionally, the ESP8266 module (figure below), this extremely versatile IC was used as a station, connecting the hardware to the local network using WiFi. It is important to mention that the more advanced versions of the ESP have an ADC port, which would exclude the use of an Arduino. However, in order to make it work for this project, two ports of the Arduino were used to transmit and receive data from the ESP (<code>TX</code> and <code>RX</code>). </p>
+
+<div style="text-align:center">
+  <p><img src="/img/esp.png" width="263" height="206" class="img-responsive center-block" /></p>
+</div>
+
+<h3 id="assembling-the-parts-on-a-breadboard"><strong>Assembling the parts on a breadboard</strong></h3>
+
+<p>After assembling the parts on a breadboard, I noticed that the user should be able to read the output data in two forms: being near and far from the device. Thus, I added a regular LCD that would print the status and the measure in decibels. 
+Furthermore, three LEDs would be able to alert the user about the loudness: if the green one is on, it means the place is quiet, if yellow the ambient noise is moderate and if red, it’s loud.</p>
+
+<!-- <br/>
+<img src="./static/img/slm.png" width="512" height="401" class="img-responsive center-block" />
+<br/> -->
+
+<div style="text-align:center">
+  <p><img src="/img/alto.jpg" width="447" height="335" class="img-responsive center-block" /></p>
+</div>
+
+<p>After doing a couple of tests with the ESP using a voltage regulator, I noticed that the response of the module is better when powered by a clean voltage source, which explains the two batteries used to exclusively power it, once the module works with 3,3V.</p>
+
+<h3 id="the-software-ios-app-reading-the-data"><strong>The software: iOS App reading the data</strong></h3>
+
+<p>As a way of testing the system, I used the ThingSpeak server to update data directly from my device to the cloud. By using their API, I could read the data coming as a JSON object, parse it, and print it to the user. I set some pins on the map, where the user would hypothetically choose the place he wanted to monitor, and then notify by email or call in case it is being loud.</p>
+
+<div style="text-align:center">
+  <p><img src="/img/print2.png" width="748" height="410" class="img-responsive center-block" /></p>
+</div>
+
+<p>The points on the map are from a central part of Recife, the city I live. The idea is to have several devices spread around a given city, updating data about how noisy is the location at any time. Finally, in the video I explain how the hardware and the software work together. :)</p>
+
+<div style="text-align:center">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/G-qB4gLC1Ag" class="center-block" frameborder="0" allowfullscreen=""></iframe>
+</div>
+
+
+  </article>
+</div>
+
+<div class="share-buttons">
+  <h6>Share on: </h6>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/articles/2016-01/sound-level-meter-using-esp8266-arduino-sound-detector" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/articles/2016-01/sound-level-meter-using-esp8266-arduino-sound-detector" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=http://localhost:4000/articles/2016-01/sound-level-meter-using-esp8266-arduino-sound-detector" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+  </ul>
+</div><!-- end share-buttons -->
+
+
+
+        <footer>
+  &copy; 2017 thiagoribeiro. Powered by <a href="http://jekyllrb.com/">Jekyll</a>.
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="http://localhost:4000/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="http://localhost:4000/js/main.js"></script>
+
+
+</body>
+</html>

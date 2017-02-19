@@ -1,31 +1,69 @@
-# Welcome to Jekyll!
 #
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
-
-# Site settings
+###################################
+# Site wide configuration
+####################################
+#
 title: thiagoribeiro
-email: thiago@toribeiro.com
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://toribeiro.com" # the base hostname & protocol for your site
-twitter_username: Taffyer 
-github_username:  wild-flame 
+email:
+description: Brazilian. Computer Engineer. Tech lover.
+url: 
 
-# Build settings
-markdown: kramdown
+
+#
+###################################
+# Jekyll configuration
+####################################
+#
+timezone:          Europe/Paris
+markdown:          kramdown
+highlighter:       rouge
+excerpt_separator: <!--more-->
+permalink:         /articles/:year-:month/:title
+
 kramdown:
-  input: GFM
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  enable_coderay: false
 
-# Third-party services
-# just leave someone empty to disable it
-# google_analytics: 
-disqus_shortname:
-
-# used this for post_excerpt at index_page
-excerpt_separator: <!--description-->
+#
+###################################
+# Site Owner configuration
+####################################
+#
+owner:
+  name: thiagoribeiro
+  avatar: profile.png
+  job: "Computer Engineer"
+  bio: "Brazilian. Feijoada anyone?"
+  email: thiago@toribeiro.com
+  disqus-shortname: tolribeiro
+  twitter: #usernames
+  facebook: #username
+  google:
+    plus: #username
+    analytics: UA-61161310-1
+    verify:
+    ad-client:
+    ad-slot:
+  bing-verify:
+  github: tolribeiro
+  gitlab: #username
+  stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
+  linkedin: #username
+  skype: #username
+  xing: #username
+  instagram: #username
+  lastfm: #username
+  tumblr: #username
+  pinterest: #username
+  foursquare: #username
+  steam: #username
+  dribbble: #username
+  youtube: #username
+  soundcloud: #username
+  weibo: #username
+  flickr: #username
+  500px: #username
+  codepen: #username
