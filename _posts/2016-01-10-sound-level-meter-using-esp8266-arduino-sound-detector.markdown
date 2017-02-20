@@ -55,9 +55,10 @@ As a way of testing the system, I used the ThingSpeak server to update data dire
 
 The points on the map are from a central part of Recife, the city I live. The idea is to have several devices spread around a given city, updating data about how noisy is the location at any time. Finally, in the video I explain how the hardware and the software work together. :)
 
-<div style="text-align:center" markdown="1">
+<div style="text-align:center" markdown="1" class="img-responsive">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/G-qB4gLC1Ag" class ="center-block" frameborder="0" allowfullscreen></iframe>
 </div>
+<!--<style>.videoWrapper {position: relative;padding-bottom: 56.25%; /* 16:9 */padding-top: 25px;height: 0;}.videoWrapper iframe {position: absolute;top: 0;left: 0;width: 100%;height: 100%;}</style><div class='videoWrapper'><iframe width="560" height="315" src='http://www.youtube.com/embed/G-qB4gLC1Ag' frameborder='0' allowfullscreen></iframe></div>-->
 
 
 

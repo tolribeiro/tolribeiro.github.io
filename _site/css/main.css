@@ -1063,7 +1063,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
   font-weight: inherit;
   color: #000; }
   h1 a:hover, h1 a:focus, h2 a:hover, h2 a:focus, h3 a:hover, h3 a:focus, h4 a:hover, h4 a:focus, h5 a:hover, h5 a:focus, h6 a:hover, h6 a:focus {
-    color: #3d3d3d; }
+    color: #000; text-decoration: underline; }
 
 h1 {
   font-size: 2rem;
