@@ -38,9 +38,8 @@ Furthermore, three LEDs would be able to alert the user about the loudness: if t
 <img src="./static/img/slm.png" width="512" height="401" class="img-responsive center-block" />
 <br/> -->
 
-
 <div style="text-align:center" markdown="1">
-<img src="/img/alto.jpg" width="447" height="335" class="img-responsive center-block" />
+<img src="/img/alto.png" width="447" height="335" class="img-responsive center-block" />
 </div>
 
 
