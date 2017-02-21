@@ -24,7 +24,7 @@ Sendo assim, com esse debate recorrente sobre educação é impossível não se 
 
 Tais questionamentos me levaram a deduzir que nada disso surte efeito se o investimento, tanto humano quanto de capital, não for feito na mola propulsora de todo e qualquer sistema educacional: **o professor**.
 
-Embora pareça uma percepção óbvia, minha observação não se resume ao lugar comum da "valorização do profissional", e é exatamente por isso que o exemplo de Marva Collins tem muito a nos ensinar.
+Embora pareça uma percepção óbvia, minha observação não se resume ao lugar-comum da "valorização do profissional", e é exatamente por isso que o exemplo de Marva Collins tem muito a nos ensinar.
 
 ### Quem foi Marva Collins?
 
