@@ -47,7 +47,7 @@ Considerando o contexto social de um bairro pobre de Chicago, onde grande parte 
 Apesar das adversidades, Ms. Collins foi extremamente audaciosa e bem sucedida ao aceitar estudantes com dificuldades de leitura e ortografia e transformá-los, monstrando-os um outro caminho, um caminho melhor.
 
 <div style="text-align:center" markdown="1">
-<img src="/img/ms_collins_students.png" width="662" height="380" class="img-responsive center-block" />
+<img src="/img/ms_collins_students.jpg" width="662" height="380" class="img-responsive center-block" />
 <br />
 Foto: Ms. Collins com seus estudantes em sala de aula.
 </div>
