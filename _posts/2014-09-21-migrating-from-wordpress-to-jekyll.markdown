@@ -4,7 +4,6 @@ layout: post
 tag: blog
 blog: true
 comments: false
-summary: "List of papers in different fields of physics that I have enjoyed reading."
 ---
 
 A couple of years ago, in my first years in college, I had a website just like this one where I would post some information about the creative process of a project that I was working on or even some stuff I thought it would be useful to other people.
