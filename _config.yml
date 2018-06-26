@@ -10,7 +10,7 @@ description: A blog about Computer Engineering & thoughts
 external-image: false
 picture: 'assets/images/profile.jpg'
 
-url: http://toribeiro.com
+# url: http://toribeiro.com
 # your url: http://USERNAME.github.io
 
 permalink: /:title/
