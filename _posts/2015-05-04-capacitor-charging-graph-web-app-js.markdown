@@ -12,7 +12,7 @@ The result of this configuration is pretty straightforward: my capacitor will ge
 
 <div style="text-align:center" markdown="1">
 <!-- ![Message Signal](http://tolribeiro.github.io/mywebsite/downloads/charge.png "Function that describes capacitor charge.") -->
-<img src="/img/charge.png" class="img-responsive center-block"/>
+<img src="https://user-images.githubusercontent.com/6345197/42239216-e3b42e76-7ec8-11e8-944b-ea5b4c2776f8.png" class="img-responsive center-block"/>
 
 </div>
 <br />
