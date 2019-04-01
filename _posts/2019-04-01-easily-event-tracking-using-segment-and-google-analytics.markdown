@@ -1,12 +1,10 @@
 ---
-title: "Easily tracking events using Segment and Google Analytics"
+title: "Easily event tracking using Segment and Google Analytics"
 layout: post
 tag: segment
 blog: true
 comments: false
 ---
-
-### Easily tracking events using Segment and Google Analytics
 
 > Truth is always to be found in simplicity, and not in the multiplicity and confusion of things
 > **Isaac Newton**
