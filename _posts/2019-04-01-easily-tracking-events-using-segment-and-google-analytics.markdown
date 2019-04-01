@@ -19,7 +19,7 @@ Not that integrating some analytics into a project should be very complicated to
 
 If you've had experience integrating third-party APIs into any project, you've probably had to deal with some unpolished docs out there instead of clarifying stuff, leave you even more confused than when you started reading them.
 
-Here is an important point on that: when a company's target market involves developers, this is something to keep an eye on. John Collison from Stripe can back me up on that when I affirm that their great API and documentation were important factors for <a href="https://growthhackers.com/growth-studies/how-stripe-marketed-to-developers- so-effectively" target="_blank">Stripe's success</a>.
+Here is an important point on that: when a company's target market involves developers, this is something to keep an eye on. John Collison from Stripe can back me up on that when I affirm that their great API and documentation were important factors for <a href="https://growthhackers.com/growth-studies/how-stripe-marketed-to-developers-so-effectively" target="_blank">Stripe's success</a>.
 
 And that's where Segment comes into play.
 
