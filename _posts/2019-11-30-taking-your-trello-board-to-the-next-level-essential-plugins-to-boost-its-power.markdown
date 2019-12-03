@@ -38,7 +38,7 @@ However, for one reason or the other, Trello seems to be the go-to tool when we 
 
 Maybe because of its simplicitity, maybe because it's free and with out-of-the-box features ready to use, or simply because it seems to be the best on the market (in my personal experience, I always seemed to go back to it after trying out others).
 
-# Pro Trello & Parent/Child Dependency (PCD)
+# Pro4Trello & Parent/Child Dependency (PCD)
 
 Although Trello holds its reputation through the advantages mentioned above, if you need to rely on it for collecting metrics or even trivial tracking, it usually doesn't get you too far. 
 
