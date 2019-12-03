@@ -40,7 +40,7 @@ Maybe because of its simplicitity, maybe because it's free and with out-of-the-b
 
 # Pro Trello & Parent/Child Dependency (PCD)
 
-Although Trello holds its reputation through the advantages mentioned above, if you needed to rely on it for collecting metrics or even trivial tracking, it usually doesn't get you too far. 
+Although Trello holds its reputation through the advantages mentioned above, if you need to rely on it for collecting metrics or even trivial tracking, it usually doesn't get you too far. 
 
 The only way I found to keep using it and still extract valuable data from it, was by using these two amazing Chrome extensions: <a href="https://chrome.google.com/webstore/detail/pro-for-trello-free-trell/hcjkfaengbcfeckhjgjdldmhjpoglecc?hl=fr--------" target="_blank">Pro4Trello</a> and <a href="https://chrome.google.com/webstore/detail/parentchild-management-fo/flnpbgmiploomjgagfbcjlikpiehclld?hl=en" target="_blank">PCD</a> . 
 
@@ -48,7 +48,7 @@ The only way I found to keep using it and still extract valuable data from it, w
 
 ### Categorization
 
-Since we have a couple of different systems and applications to keep track of, we've decided to use the ProTrello's categories feature per card and we divide them between iOS, Android, Website and others. 
+Since we have a couple of different systems and applications to keep track of, we've decided to use the Pro4Trello's categories feature per card and we divide them between iOS, Android, Website and others. 
 
 So the user would start by typing the name of the category, then writing the description of the card after the pipe:
 
@@ -66,7 +66,7 @@ Category1 | This card is to describe a certain feature [US]
 
 ### Identification:
 
-Since we need to keep track of which the changes to the codebase are related to each cards, this feature allows the developers to have an auto generated ID for each card created that can be used for branching or commit messages.
+Since we need to keep track of which changes to the codebase are related to each cards, this feature allows the developers to have an auto generated ID for each card created that can be used for branching or commit messages.
 
 ### Prioritization
 
@@ -83,7 +83,7 @@ Finally, as sometimes needed, a task is dependent on the other and for that  we 
 
 ## Real life example: defect on iOS app
 
-Given that we need a card to track a defect (*tag:*`[DE]`) from the Jamp's iOS app (*category:* `iOS`) where the text gets truncated for words of more than 10 characters and it's a critical issue (*Prioritization:* `!!!`). 
+Given that we need a card to track a defect (*tag:*`[DE]`) from the Jamp's iOS app (*category:* `iOS`) where the text gets truncated for words of more than 10 characters and it's a critical issue (*prioritization:* `!!!`). 
 
 The developer estimated that it'd take 1 hour to fix it. Here is how the card would be created for Pro4Trello:
 
@@ -97,14 +97,15 @@ The plugin would then process these formatting from the card and display it like
 <img src="https://user-images.githubusercontent.com/6345197/69908127-00ad9c80-13a9-11ea-9aad-0bd2aa8dddf6.png" width="242" class="img-responsive center-block" />
 </div>
 
-Notice that it created its own id `#1`, which is used for commits and branches.
+Notice that it created its own id `#1`, which is the one used for commits and branches.
 
-Now the most incredible part is that Pro4Trello organizes all the data for you on a tab below it, where you can simply on the filter (*category*, *tags* etc) and have the board display it for you:
+Now the most incredible part is that Pro4Trello organizes all the data for you on a tab below the board, where you can simply filter your cards (*category*, *tags* etc) and have the board display it for you:
 
 <div style="text-align:center" markdown="2">
     <img width="615" alt="Screen Shot 2019-11-30 at 7 42 32 PM" src="https://user-images.githubusercontent.com/6345197/69908152-92b5a500-13a9-11ea-9380-d51e8e9a6c85.png" class="img-responsive center-block">
 </div>
 
-Therefore, by the end of each cycle (be it a week or two), you can archive the lists and they can be easily searched by dates from the default Trello search option. 
+Therefore, by the end of each cycle (be it a week or two), you can archive the lists and they can be easily searched by dates from the default Trello search option whenever you need to pull some data regarding your development cycle. 
 
-That way, we've been able to fully function as a small concise team by leveraging these tools which reduces eliminates the need to spend on more powerful ones since we'd only make us of some of its features.
+That way, we've been able to fully function as a small concise team by leveraging these tools, eliminating the need to spend on more powerful ones since we'd only make use of some of the thousands of features these
+more robust tools usually provide.
