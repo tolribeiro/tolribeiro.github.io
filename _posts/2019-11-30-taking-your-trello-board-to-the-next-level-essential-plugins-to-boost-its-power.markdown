@@ -64,7 +64,7 @@ Each card that gets added to the board needs to specify its type through a tag. 
 Category1 | This card is to describe a certain feature [US]
 ```
 
-### Identification:
+### Identification
 
 Since we need to keep track of which changes to the codebase are related to each cards, this feature allows the developers to have an auto generated ID for each card created that can be used for branching or commit messages.
 
@@ -72,7 +72,7 @@ Since we need to keep track of which changes to the codebase are related to each
 
 Another key thing to differentiate cards is the ability to mark some as more important than others. For this, the plugin allows you to simply specifiy the level of priority of a card by using `!`, `!!`, or `!!!`.
 
-### Estimation:
+### Estimation
 
 The person creating the card can also add the estimation for the time that is going to be spent on the task by adding a `{}` with the time inside the curly braces.
 
