@@ -1,5 +1,5 @@
 ---
-title: "Cultural training in programming: the pitfall of Stack Overflow phenomena"
+title: "Cultural training in programming: the pitfall of the Stack Overflow phenomena"
 layout: post
 tag: programming
 blog: true
@@ -7,10 +7,6 @@ comments: false
 ---
 
 ------------------------------------
-
-<!-- <div style="text-align:center" markdown="1">
-<img src="https://user-images.githubusercontent.com/6345197/69908242-2b98f000-13ab-11ea-9c1e-20542d41725e.png" width="800" class="img-responsive center-block" />
-</div> -->
 
 # A little story on cultural training: Grandma's ham
 
