@@ -9,7 +9,7 @@ comments: false
 ------------------------------------
 
 <div style="text-align:center" markdown="1">
-<img src="https://user-images.githubusercontent.com/6345197/70920688-9ae82400-1fe8-11ea-9ecb-f927c4232d71.png" width="800" class="img-responsive center-block" />
+<img src="https://user-images.githubusercontent.com/6345197/70920688-9ae82400-1fe8-11ea-9ecb-f927c4232d71.png" width="699" class="img-responsive center-block" />
 </div>
 
 # A little story on cultural training: grandma's ham
@@ -29,6 +29,14 @@ This story illustrates what is often called **cultural training** which is when 
 # Stack Overflow: cultural training at scale
 
 If you're a software engineer or have interacted with them for long enough, you've probably heard of Stack Overflow at least once in your life.
+
+<div style="text-align:center" markdown="1">
+<img src="https://user-images.githubusercontent.com/6345197/70921763-8dcc3480-1fea-11ea-951a-0c1abed6ad43.jpeg" width="600" class="img-responsive center-block" />
+<div style="text-align:center" markdown="1">
+<span style="color:#aaa;">Jeff and Joel giving a speech one year after the website's launch (2009)</span>
+</div>
+</div>
+
 
 Created in 2008 by <a href="https://en.wikipedia.org/wiki/Jeff_Atwood" target="_blank">Jeff Atwood</a> and <a href="https://en.wikipedia.org/wiki/Joel_Spolsky" target="_blank">Joel Spolsky</a> (the same guy that created Trello, which I wrote about <a href="https://toribeiro.com/taking-your-trello-board-to-the-next-level-essential-plugins-to-boost-its-power/" target="_blank">on my previous post</a>), it's a question and answer website for programmers to post and answer questions related to programming languages, problems and general issues.
 
