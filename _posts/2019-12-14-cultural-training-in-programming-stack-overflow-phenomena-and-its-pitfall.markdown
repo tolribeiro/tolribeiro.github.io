@@ -8,7 +8,11 @@ comments: false
 
 ------------------------------------
 
-# A little story on cultural training: Grandma's ham
+<div style="text-align:center" markdown="1">
+<img src="https://user-images.githubusercontent.com/6345197/70920688-9ae82400-1fe8-11ea-9ecb-f927c4232d71.png" width="800" class="img-responsive center-block" />
+</div>
+
+# A little story on cultural training: grandma's ham
 
 A couple of years ago I once read a fictional story on a book that resonated so much with me that I could never forget it. 
 
