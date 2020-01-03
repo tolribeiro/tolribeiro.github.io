@@ -2,35 +2,43 @@
 layout: page
 title: Projects
 ---
-<!-- <p> I work on two different projects which both come under the broad umbrella of experimental nuclear physics. One of it is a hardware project in which I am helping to design and build a detector subsystem and in the other I analyse the collision data from <a href="https://www.bnl.gov/world/"> Brookhaven National Lab </a> to further our understanding about <a href ="https://en.wikipedia.org/wiki/Color-glass_condensate"> colour-glass condensate </a>. Brief explanation of these projects are given below.
+ <style>
+    .card {
+        border-radius: 5px;
+        color: white;
+        padding: 1rem;
+        height: 60px;
+        font-weight: 400;
+        width: 92%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
 
-</p>
-<h2> Building of Time Projection Chamber (TPC) :</h2>
+    .cards {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-gap: 15px;
+    }
 
-<p>Time projection chamber is a tracking device used in many physics experiments to be able to track energetic particles as they move through a medium. I help in building a tracking device for upcoming detector system <a href="https://www.sphenix.bnl.gov/web/"> sPHENIX </a> at BNL. 
-Unlike most TPC’s, which have a spatial resolution of 300 microns, we are hoping to achieve a resolution of 150 microns which will be a critical in measuring fully resolved upsilon states and thus the debye radius of <a href="https://www.bnl.gov/riken/research/QGP.php" target="_blank"> quark-gluon plasma </a>. The tracking system will work in continuous read out, at high data collection rates -15kHz- and will be able to provide the needed momentum resolution.
+    /* Screen larger than 600px? 2 column */
+    @media (min-width: 600px) {
+    .cards { grid-template-columns: repeat(2, 1fr); }
+    }
 
-</p>
-
-
-<h2> MPCeX Callibration and Data Analysis:</h2>
-
-
-
-    <p>Soon to be updated </p>
-
-    </p>
-<section class="list">
-    {% for post in site.posts %}
-        {% if post.research %}
-            <div class="item {% if post.star %}star{% endif %}">
-                <a class="url" href="{% if post.externalLink %}{{ post.externalLink }}{% else %}{{ site.url }}{{ post.url }}{% endif %}">
-                    <aside><time datetime="{{ post.date | date:"%d-%m-%Y" }}">{{ post.date | date: "%b %d %Y" }}</time></aside>
-                    {{ post.jemoji }}<h3 class="title">{{ post.title }}</h3>
-                </a>
-            </div>
-        {% endif %}
-    {% endfor %}
-</section>
- -->
- WIP
+    /* Screen larger than 900px? 3 columns */
+    @media (min-width: 900px) {
+    .cards { grid-template-columns: repeat(3, 1fr); }
+    }
+</style>
+<p>Here you'll find a selection of some projects I've worked on, both professionally and personally (including some hobbies):</p>
+<div class="cards">
+    <div class="card" style="background-image: url('https://user-images.githubusercontent.com/6345197/71708322-1c480080-2db6-11ea-9098-693e83028a97.png');">
+        SOFTWARE & WEB
+    </div>
+    <div class="card" style="background-image: url('https://user-images.githubusercontent.com/6345197/71708448-0e46af80-2db7-11ea-9c72-128a2841a871.png');">
+        ELECTRONICS
+    </div>
+    <div class="card" style="background-image: url('https://user-images.githubusercontent.com/6345197/71708800-37683f80-2db9-11ea-96f0-36e4289d1b14.png');">
+        MUSIC
+    </div>
+</div>
