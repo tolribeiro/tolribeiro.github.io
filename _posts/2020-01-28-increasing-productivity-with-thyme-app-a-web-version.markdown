@@ -1,5 +1,5 @@
 ---
-title: "Increasing productivy with Thyme app: a web version"
+title: "Increasing productivity with Thyme app: a web version"
 layout: post
 tag: time tracking thyme
 blog: true
