@@ -20,19 +20,17 @@ That's how I found myself last year: looking for ways to increase my level of co
 
 Among the several ways you can accomplish that, for me, the main thing I was looking for was to simply track *time spent working deeply on something* (yes, Carl Newports' <a href="https://www.calnewport.com/books/deep-work/" target="_blank">Deep Work</a> book did have an influence on that).
 
-Although I did find several cool options out there ( <a href="https://toggl.com/">Toggl</a>, <a href="https://tickspot.com/" target="_blank">Tickspot</a>, etc),  everything I tried didn't feel right.
+Although I did find several cool options out there (<a href="https://toggl.com/">Toggl</a>, <a href="https://tickspot.com/" target="_blank">Tickspot</a>, etc),  everything I tried didn't feel right.
 
-Some of the other solutions I found were either full of features I didn't need, I'd have to pay to use it or sign up to at least see it functioning. 
+Some of the other solutions I found were either full of features I didn't need, or I'd have to pay to use it or sign up to at least see it functioning. 
 
-Until I found <a href="https://joaomoreno.github.io/thyme/" target="_blank">Thyme</a>. With no expectations (since it was free and open source), I downloaded it, tried it out for a couple of days and...loved it right away. The app was simple and straight to the point. 
+Until I found <a href="https://joaomoreno.github.io/thyme/" target="_blank">Thyme</a>. With no expectations (since it was free and open source), I downloaded it, tried it out for a couple of days and...loved it. The app was simple and straight to the point. 
 
-As I was using it, I was noticing how much more focused and productivity I'd become while working on something and I am very sure the app has helped a lot. 
-
-I had found exactly what I was looking for with Thyme.
+As I was using it, I was noticing how much more focused and productive I'd become while working on something and I am very sure the app has me helped to achieve that. I had finally found exactly what I was looking for.
 
 # My workflow with Thyme
 
-It seems very obvious, but Thyme seems to get the UX involved in the process of tracking your time, more naturally by dividing it into: *start*, *stop* and *continue*. 
+It seems very obvious, but Thyme seems to get the UX involved in the process of tracking your time, more naturally by dividing it into *three* actions: *start*, *stop* and *continue*. 
 
 That idea contrasts with a lot of what you'll see out there with the "Start" and "Stop" button titles only. 
  
@@ -40,13 +38,13 @@ Even Google's timer (Apple's too I should say) shows the word "Start" when you s
 
 Back to Thyme, there is also a little feature that comes in handy, which is the export option.
 
-Overall, the idea of a timer is straightforward, but the solutions I had found prior to Thyme all seemed overly engineered or full of features that distracted me from the real objective: helping me track how long did it take to finish a task.
+Overall, the idea of a timer is straightforward, but the solutions I had found prior to Thyme all seemed overly engineered which distracted me from the real objective: helping me track how long did it take to finish a task.
 
 # Con: Thyme is Mac OS only
 
 Hopefully I've convinced you that that little app is awesome by now, but the con is that Thyme is currently only written for Mac OS (until now I guess). 
 
-As I have been using Windows a lot for the past months, I just started to fill the void. The daily use of the app made it stick like a habit.
+As I have been using Windows a lot for the past months, I just started to feel the void. The daily use of the app stuck like a habit.
 
 It had become part of my daily activities and I was missing it a lot. It had definitely become part of my daily routine: sit down to concentrate, 
 start Thyme. Then I had an idea...
@@ -61,7 +59,7 @@ The project is written in Angular and uses Web Workers to keep the timer being u
 
 The beautiful UI you see was created in partnership with <a href="https://dribbble.com/jandui" target="blank_">Jandui</a> (thanks my friend!) which I've successfully been able to convince to start navigating the open source world as well, haha. 
 
-This very first version is available here: https://thymeweb.netlify.com/
+This very first version is available here on <a href="https://thymeweb.netlify.com/">https://thymeweb.netlify.com/</a>
 
 # Current Features
 
@@ -75,6 +73,6 @@ This very first version is available here: https://thymeweb.netlify.com/
 - **Synching capability**: since I have noticed that as I have the app installed in multiple Mac machines, and Thyme for Mac stores it locally only, I end up not knowing anything about my tasks from one machine once I switch to another;
 - **Fully developed mobile UI**: for now only the Desktop app looks good, but we've got some work to finish the mobile version of it;
 
-Interested? please star the repo (https://github.com/tolribeiro/thyme-web) and help us spread the word about Thyme. You are more than welcome helping us out to build a better version of it :)
+Interested? please star the repo (<a href="https://github.com/tolribeiro/thyme-web" target="blank_">https://github.com/tolribeiro/thyme-web</a>) and help us spread the word about Thyme. You are more than welcome helping us out to build a better version of it :)
 
-And I hope Thyme becomes as useful and helpful to you as it has been to me (I've used it to track the time I spent writing this post as well!)
+And I hope Thyme becomes as useful and helpful to you as it has been to me (I've used the web version to track the time I spent writing this post as well!)
