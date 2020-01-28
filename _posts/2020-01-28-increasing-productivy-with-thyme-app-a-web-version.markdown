@@ -1,4 +1,3 @@
-
 ---
 title: "Increasing productivy with Thyme app: a web version"
 layout: post
